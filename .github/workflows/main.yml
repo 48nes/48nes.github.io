@@ -1,21 +1,28 @@
-name: Deploy
-on:
-  push:
-    branches: [master]
+on: push
 jobs:
-  docs:
-    name: Deploy docs
+  build:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
     steps:
-      - name: Checkout
+      - name: 'checkout'
         uses: actions/checkout@v2
-      - name: Build
-        uses: shalzz/zola-deploy-action@master
+      - name: 'build'
+        uses: shalzz/zola-deploy-action@v0.13.0
         env:
-          BUILD_ONLY: true
-      - name: Deploy
-        if: ${{ success() }}
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          branch: gh-pages
-          folder: public
+          PAGES_BRANCH: gh-pages
+          BUILD_DIR: .
+          TOKEN: GHP_GVO0C3KXDHLAJKYHFQPXMYIONEBY1Q0VUKBF
+          # BUILD_ONLY: true
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v2
+      - name: 'build and deploy'
+        uses: shalzz/zola-deploy-action@v0.13.0
+        env:
+          PAGES_BRANCH: master
+          BUILD_DIR: .
+          TOKEN: GHP_GVO0C3KXDHLAJKYHFQPXMYIONEBY1Q0VUKBF
+          REPOSITORY: 48nes/48nes.github.io
