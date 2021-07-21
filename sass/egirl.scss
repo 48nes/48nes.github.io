@@ -54,7 +54,7 @@ a:hover, a:active, .active>a {
   overflow: hidden;
   white-space: nowrap;
   margin: 0;
-  font-size: 56px;
+  font-size: 2.5rem;
   animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -67,7 +67,6 @@ a:hover, a:active, .active>a {
 }
 
 #info-section {
-  padding: 40px;
   min-height: 93vh;
 }
 
@@ -94,6 +93,10 @@ a:hover, a:active, .active>a {
 
   .mobile-header {
     display: none;
+  }
+
+  #info-section {
+    padding: 40px;
   }
 }
 
