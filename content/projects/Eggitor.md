@@ -8,7 +8,9 @@ primary-language = ["Java"]
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/dTD127PVTK0" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
-The Eggitor image editor was our final assignment for Object Oriented Design.
+
+
+The Eggitor image editor was our final pair programming assignment for Object Oriented Design.
 
 Above is a video demo of our editor's features, including:
 
