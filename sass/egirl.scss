@@ -91,10 +91,26 @@ a:hover, a:active, .active>a {
   width: 250px;
   height: 150px;
   margin-bottom: 10px;
+  box-shadow: 0px 0px 5px #202225;
 }
 
 .project-box {
   width: 260px;
+}
+
+.project-box:hover {
+  text-decoration: none;
+  transform: scale(1.2);
+  animation: smoothScale 1s ease;
+}
+
+@keyframes smoothScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 @media screen and (min-width: 767px) {
