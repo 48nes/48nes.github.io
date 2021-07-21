@@ -7,7 +7,7 @@ secondary-language = ["CSS"]
 tertiary-language = ["JavaScript"]
 +++
 
-<img src="48nes.PNG" alt="homepage image" width="100%" style="box-shadow: 0px 0px 5px #000000; margin-bottom: 20px;"/>
+<img src="/static/48nes.PNG" alt="homepage image" width="100%" style="box-shadow: 0px 0px 5px #000000; margin-bottom: 20px;"/>
 
 [48nes.github.io](https://48nes.github.io) is a personal portfolio site I created to showcase my work. 
 
