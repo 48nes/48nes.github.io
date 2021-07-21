@@ -21,7 +21,7 @@ body {
   text-transform: uppercase;
 }
 
-.sidebar a:hover, .sidebar .active a {
+.sidebar a:hover, .sidebar .active>a {
   color: #bc8da7;
   letter-spacing: 5px;
   animation: subtleShift 1s ease;
@@ -36,7 +36,7 @@ a {
   color: #e7c7f5;
 }
 
-a:hover, a:active, .active a {
+a:hover, a:active, .active>a {
   color: #7d6a9e;
 }
 
@@ -45,7 +45,8 @@ a:hover, a:active, .active a {
 }
 
 #content {
-  padding: 50px;
+  padding: 10px;
+  height: 100%;
 }
 
 .typewriter {
@@ -65,9 +66,48 @@ a:hover, a:active, .active a {
   margin-top: 50px;
 }
 
+#info-section {
+  padding: 40px;
+  min-height: 93vh;
+}
+
+.footer {
+  float: right;
+}
+
+.mobile-header {
+  padding: 10px;
+}
+
+.mobile-header button {  
+  color: #fbdddb;
+}
+
+.mobile-header button:hover {
+  color: #bc8da7;
+}
+
 @media screen and (min-width: 767px) {
   .body-text {
     margin-top: 100px;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar {
+    display: none!important;
+  }
+  
+  .sidebar.active {
+    display: block!important;
+    background: #313339;
+    position: absolute;
+    z-index: 999999;
+    width: 100%;
   }
 }
 
@@ -92,6 +132,10 @@ a:hover, a:active, .active a {
 ::selection { 
   background: #e7c7f5;
   color:#202225; 
+}
+
+::-webkit-scrollbar {
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
