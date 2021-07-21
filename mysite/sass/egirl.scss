@@ -1,0 +1,107 @@
+body {
+  background: #36393f;
+  color: #b9bbbe;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sidebar {
+  background: #313339;
+  height: 100vh;
+  justify-content: center;
+  padding-left: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar a {
+  color: #fbdddb;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+}
+
+.sidebar a:hover, .sidebar .active a {
+  color: #bc8da7;
+  letter-spacing: 5px;
+  animation: subtleShift 1s ease;
+}
+
+.sidebar li:hover, .sidebar li.active {
+  background: #202225;
+  border-left: 3px solid #bc8da7;
+}
+
+a {
+  color: #e7c7f5;
+}
+
+a:hover, a:active, .active a {
+  color: #7d6a9e;
+}
+
+.contact-link:hover {
+  text-decoration: none;
+}
+
+#content {
+  padding: 50px;
+}
+
+.typewriter {
+  font-family: 'Roboto Mono', monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 56px;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.body-text {
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 767px) {
+  .body-text {
+    margin-top: 100px;
+  }
+}
+
+@keyframes typing {
+  from { 
+    width: 0;
+  }
+  to { 
+    width: 100%;
+  }
+}
+
+@keyframes subtleShift {
+  from {
+    letter-spacing: 2px;
+  }
+  to {
+    letter-spacing: 5px;
+  }
+}
+
+::selection { 
+  background: #e7c7f5;
+  color:#202225; 
+}
+
+::-webkit-scrollbar-track {
+  background: #202225;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e7c7f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7d6a9e;
+}
