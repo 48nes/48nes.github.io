@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block script %}
+<script>
+  var current = document.getElementById("nav-home");
+  current.classList.add("active");
+</script>
+{% endblock script %}
+
+{% block content %}
+<h1 class="title typewriter">
+  Agnes Shan
+</h1>
+<div class="body-text">
+  <p>Welcome! I'm currently a student at Northeastern University, pursuing a combined major in Computer Science and Business with a concentration in Fintech. </p>
+  <h2 class="mt-5">Contact</h2>
+  <div class="d-flex flex-row flex-wrap" style="font-size: 24px;">
+    <a href="mailto:agnesshan@live.com" class="mx-3 contact-link">
+      <i class="fas fa-envelope mr-2"></i>
+      <span>email</span>
+    </a>
+    <a href="https://www.linkedin.com/in/agnes-shan/" class="mx-3 contact-link">
+      <i class="fab fa-linkedin mr-2"></i>
+      <span>linkedin</span>
+    </a>
+    <a href="https://github.com/48nes" class="mx-3 contact-link">
+      <i class="fab fa-github mr-2"></i>
+      <span>github</span>
+    </a>
+  </div>
+</div>
+{% endblock content %}
