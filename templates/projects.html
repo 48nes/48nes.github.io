@@ -12,6 +12,13 @@
   Projects
 </h1>
 <div class="body-text">
-  <p>Tbd... </p>
+  <div class="d-flex flex-row flex-wrap">
+    {% for page in section.pages %}
+    <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box">
+      <img src="{{ page.description }}.png" class="project-thumbnail">
+      <span>{{ page.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
 </div>
 {% endblock content %}
