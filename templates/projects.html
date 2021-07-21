@@ -15,7 +15,7 @@
   <div class="d-flex flex-row flex-wrap">
     {% for page in section.pages %}
     <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box">
-      <img src="static/{{ page.description }}.PNG" class="project-thumbnail">
+      <img src="{{ page.description }}.PNG" class="project-thumbnail">
       <span>{{ page.title }}</span>
     </a>
     {% endfor %}
