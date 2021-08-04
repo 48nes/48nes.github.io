@@ -14,7 +14,8 @@ LeetBot is written entirely in Python and uses PostgreSQL for database managemen
 
 ### Credits
 
-- [Agnes Shan](https://github.com/48nes)
+Special thanks to the following for their help on this project!
+
 - [Rixuan Zheng](https://github.com/rixuanzheng), for helping to set up the PostgreSQL database on Heroku and adding the `+top` command
 - [Neel Bhalla](https://github.com/ashdawngary), for helping to write the API used
 
