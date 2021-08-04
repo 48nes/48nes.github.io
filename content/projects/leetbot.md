@@ -6,7 +6,7 @@ primary-language = ["Python"]
 secondary-language = ["PostgreSQL"]
 +++
 
-LeetBot is a Discord bot that scrapes Leetcode user profiles and updates progress in real time. It is currently made to be self-hosted, see the setup section below for how to host. It is currently being hosted in [this repository](https://github.com/48nes/leetbot).
+LeetBot is a Discord bot that scrapes Leetcode user profiles and updates progress in real time. It is currently being viewable in [this repository](https://github.com/48nes/leetbot).
 
 ## About
 
@@ -15,8 +15,8 @@ LeetBot is written entirely in Python and uses PostgreSQL for database managemen
 ### Credits
 
 - [Agnes Shan](https://github.com/48nes)
-- [Rixuan Zheng](https://github.com/rixuanzheng)
-- [Neel Bhalla](https://github.com/ashdawngary)
+- [Rixuan Zheng](https://github.com/rixuanzheng), for helping to set up the PostgreSQL database on Heroku and adding the `+top` command
+- [Neel Bhalla](https://github.com/ashdawngary), for helping to write the API used
 
 ## Commands and Features
 
@@ -87,5 +87,26 @@ Currently, we use [Heroku](https://dashboard.heroku.com/) to run our version of 
 7. Add another config var with `ACCOUNT_KEY` as the key and the username/password for your dummy account as the value. 
 8. Go back up to Resources. Under Dynos, select worker.
 9. Go to [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) and click Install. Add the database to the Heroku app.
+10. The database should now be viewable from the Overview tab, click on the database
+11. Go to the Settings tab for the database and View Credentials, save this information somewhere
 
-After following these steps, the bot should run!
+#### PostgreSQL Setup
+
+1. Download [PostgreSQL](https://www.postgresql.org/download/) locally
+2. Launch SQL Shell
+3. Follow prompts and enter in the data given from the last step on the Heroku setup
+4. Paste the following code into command prompt
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+            discord_id BIGINT PRIMARY KEY,
+            leetcode_username TEXT NOT NULL,
+            num_total INTEGER NOT NULL,
+            num_easy INTEGER NOT NULL,
+            num_medium INTEGER NOT NULL,
+            num_hard INTEGER NOT NULL,
+            total_subs INTEGER NOT NULL
+        );
+```
+
+After following these steps, the bot should be up and running!
