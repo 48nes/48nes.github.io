@@ -13,6 +13,21 @@
 </h1>
 <div class="body-text">
   <p>Hello! My name is Agnes and I'm an aspiring software engineer with an interest in financial tech. </p>
-  <p>In my free time, when I'm not <a href="https://48nes.github.io/projects/toyhouse/">building custom websites for artists and other creatives</a>, I enjoy exploring the city and struggling to keep up with the latest Netflix shows.</p>
+  <p>In my free time, when I'm not <a href="https://48nes.github.io/projects/toyhouse/">building custom websites for artists and other creatives</a>, I enjoy exploring the city and struggling to keep up with the latest Netflix shows. </p>
+  <p>You can check out some of my recent projects below!</p>
+
+  <h2 class="mt-5">Recent Projects</h2>
+  <div class="d-flex flex-row flex-wrap">
+    {% set posts = get_section(path='projects/_index.md') %}
+    {% set_global count = 0 %}
+    {% for page in posts.pages %}
+    {% if loop.index < 4 %}
+    <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box my-3">
+      <img src="{{ page.description }}.png" class="project-thumbnail">
+      <span>{{ page.title }}</span>
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
 </div>
 {% endblock content %}
