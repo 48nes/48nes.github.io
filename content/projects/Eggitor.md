@@ -1,6 +1,7 @@
 +++
 title = "Eggitor"
 description = "eggitor"
+date = 2021-06-27
 [taxonomies]
 primary-language = ["Java"]
 +++
