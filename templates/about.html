@@ -23,7 +23,7 @@
     {% for page in posts.pages %}
     {% if loop.index < 4 %}
     <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box my-3">
-      <img src="{{ page.description }}.png" class="project-thumbnail">
+      <img src="../content/projects/{{ page.description }}.png" class="project-thumbnail">
       <span>{{ page.title }}</span>
     </a>
     {% endif %}
