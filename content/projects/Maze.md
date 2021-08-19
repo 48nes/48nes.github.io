@@ -1,6 +1,7 @@
 +++
 title = "Maze"
 description = "maze"
+date = 2021-04-21
 [taxonomies]
 primary-language = ["Java"]
 +++
