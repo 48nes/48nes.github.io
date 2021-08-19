@@ -1,6 +1,7 @@
 +++
 title = "48nes.github.io"
 description = "48nes"
+date = 2021-08-11
 [taxonomies]
 primary-language = ["HTML"]
 secondary-language = ["CSS"]
