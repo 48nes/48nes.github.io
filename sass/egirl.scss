@@ -1,3 +1,15 @@
+/* SCSS vars */
+$light-gray: #f8f9fa;
+$fade-gray: #495057;
+$dark-gray: #343a40;
+$darker-gray: #212529;
+
+$fade-purple: #e7c7f5;
+$dark-purple: #7d6a9e;
+
+$fade-pink: #fbdddb;
+$dark-pink: #bc8da7;
+
 body {
   background: #36393f;
   color: #b9bbbe;
@@ -14,7 +26,7 @@ body {
 }
 
 .sidebar a {
-  color: #fbdddb;
+  color: $fade-pink;
   font-size: 24px;
   letter-spacing: 2px;
   font-family: 'Titillium Web', sans-serif;
@@ -33,11 +45,11 @@ body {
 }
 
 a {
-  color: #e7c7f5;
+  color: $fade-purple;
 }
 
 a:hover, a:active, .active>a {
-  color: #7d6a9e;
+  color: $dark-purple;
 }
 
 .contact-link:hover {
@@ -79,12 +91,12 @@ a:hover, a:active, .active>a {
 }
 
 .mobile-header button {  
-  color: #fbdddb;
+  color: $fade-pink;
   font-size: 32px;
 }
 
 .mobile-header button:hover {
-  color: #bc8da7;
+  color: $dark-pink;
 }
 
 .project-thumbnail {
@@ -169,8 +181,8 @@ iframe {
 }
 
 ::selection { 
-  background: #e7c7f5;
-  color:#202225; 
+  background: $fade-purple;
+  color: #202225; 
 }
 
 ::-webkit-scrollbar {
@@ -182,9 +194,9 @@ iframe {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e7c7f5;
+  background: $fade-purple;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7d6a9e;
+  background: $dark-purple;
 }
