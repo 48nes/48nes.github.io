@@ -11,13 +11,13 @@ $fade-pink: #fbdddb;
 $dark-pink: #bc8da7;
 
 body {
-  background: #36393f;
-  color: #b9bbbe;
+  background: $fade-gray;
+  color: $light-gray;
   font-family: 'Raleway', sans-serif;
 }
 
 .sidebar {
-  background: #313339;
+  background: $dark-gray;
   height: 100vh;
   justify-content: center;
   padding-left: 20px;
@@ -34,14 +34,14 @@ body {
 }
 
 .sidebar a:hover, .sidebar .active>a {
-  color: #bc8da7;
+  color: $dark-pink;
   letter-spacing: 5px;
   animation: subtleShift 1s ease;
 }
 
 .sidebar li:hover, .sidebar li.active {
-  background: #202225;
-  border-left: 3px solid #bc8da7;
+  background: $darker-gray;
+  border-left: 3px solid $dark-pink;
 }
 
 a {
@@ -103,7 +103,7 @@ a:hover, a:active, .active>a {
   width: 250px;
   height: 150px;
   margin-bottom: 10px;
-  box-shadow: 0px 0px 5px #202225;
+  box-shadow: 0px 0px 5px $darker-gray;
 }
 
 .project-box {
@@ -155,7 +155,7 @@ iframe {
   
   .sidebar.active {
     display: block!important;
-    background: #313339;
+    background: $dark-gray;
     position: absolute;
     z-index: 999999;
     width: 100%;
@@ -182,7 +182,7 @@ iframe {
 
 ::selection { 
   background: $fade-purple;
-  color: #202225; 
+  color: $darker-gray; 
 }
 
 ::-webkit-scrollbar {
@@ -190,7 +190,7 @@ iframe {
 }
 
 ::-webkit-scrollbar-track {
-  background: #202225;
+  background: $darker-gray;
 }
 
 ::-webkit-scrollbar-thumb {
