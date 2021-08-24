@@ -40,8 +40,7 @@ body {
 }
 
 .sidebar li:hover, .sidebar li.active {
-  background: $darker-gray;
-  border-left: 3px solid $dark-pink;
+  border-right: 3px solid $dark-pink;
 }
 
 a {
