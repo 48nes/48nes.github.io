@@ -14,6 +14,11 @@
 </head>
 
 <body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
   <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
     <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
   </div>
@@ -58,8 +63,10 @@
     var curTheme = document.documentElement.getAttribute('data-theme');
     if (curTheme == "light") {
       document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
     }
   }
   </script>
