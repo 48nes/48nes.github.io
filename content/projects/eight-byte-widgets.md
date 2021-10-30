@@ -11,11 +11,13 @@ secondary-language = ["HTML"]
 
 ### Like Counter
 
-![image of site](https://github.com/48nes/48nes.github.io/blob/main/content/projects/thlc.PNG?raw=true)
+<img src="https://github.com/48nes/48nes.github.io/blob/main/static/lc.PNG?raw=true" style="width:45%;"><img src="https://github.com/48nes/48nes.github.io/blob/main/static/lc2.PNG?raw=true" style="width:45%;">
 
 The Toyhou.se Like Counter is a dynamic web app that allows toyhou.se users to check how many likes their characters have accumulated in total. 
 
 ### Character Generator
+
+<img src="https://github.com/48nes/48nes.github.io/blob/main/static/rcg.PNG?raw=true" style="width:45%;"><img src="https://github.com/48nes/48nes.github.io/blob/main/static/rcg2.PNG?raw=true" style="width:45%;">
 
 The Random Character Generator allows users to generate a random character in a folder by giving the folder link. The app works for both personal folders and group folders.
 
