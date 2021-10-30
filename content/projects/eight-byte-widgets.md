@@ -23,6 +23,6 @@ The Random Character Generator allows users to generate a random character in a 
 
 ### Previews
 
-All widgets are currently live at [eight-byte-widgets.herokuapp.com](https://eight-byte-widgets.herokuapp.com).
+All widgets are currently live at [eightbyte-widgets.herokuapp.com](https://eightbyte-widgets.herokuapp.com).
 
 This project is currently in a private repository. 
