@@ -1,6 +1,6 @@
 +++
 title = "8byte Widgets"
-description = "thlc"
+description = "8bw"
 date = 2021-08-17
 [taxonomies]
 primary-language = ["Python"]
