@@ -9,16 +9,24 @@
 
 {% block content %}
 <h1 class="title typewriter">
-  Projects
+  {{ section.title }}
 </h1>
 <div class="body-text">
-  <div class="d-flex flex-row flex-wrap">
-    {% for page in section.pages %}
-    <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box my-3">
-      <img src="{{ page.description }}.PNG" class="project-thumbnail">
-      <span>{{ page.title }}</span>
-    </a>
-    {% endfor %}
-  </div>
+  <p>
+    {{ section.content | safe }}
+  </p>
+  {% for item in section.extra.categories %}
+    <h3>{{ item }}</h3>
+    <div class="d-flex flex-row flex-wrap justify-content-start">
+      {% for page in section.pages %}
+      {% if page.extra.category == item %}
+      <a href="{{ page.permalink | safe }}" class="d-flex flex-column align-items-center project-box my-3">
+        <img src="{{ page.extra.image }}" class="project-thumbnail">
+        <span>{{ page.title }}</span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
 </div>
 {% endblock content %}

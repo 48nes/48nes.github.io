@@ -5,6 +5,9 @@ date = 2021-09-28
 [taxonomies]
 primary-language = ["Python"]
 secondary-language = ["HTML"]
+[extra]
+image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/stor8%20dark.PNG"
+category = "Fullstack"
 +++
 <img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/stor8%20light.jpeg?raw=true" style="width:33%;"/> <img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/stor8%20dark.jpeg?raw=true" style="width:33%;"/> <img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/eightbyte.PNG?raw=true" alt="drawing" style="width:33%;"/>
 

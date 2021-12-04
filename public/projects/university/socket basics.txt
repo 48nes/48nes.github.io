@@ -1,0 +1,9 @@
++++
+title = "Socket Basics"
+date = 2021-09-29
+[taxonomies]
+primary-language = ["Python"]
+[extra]
+image = "https://www.gaithersburgdental.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
+category = "Networks and Distributed Systems"
++++
