@@ -23,6 +23,12 @@ The Toyhou.se Like Counter is a dynamic web app that allows toyhou.se users to c
 
 The Random Character Generator allows users to generate a random character in a folder by giving the folder link. The app works for both personal folders and group folders.
 
+### Image Downloader*
+
+*This project is currently not yet available on the site.
+
+I created an image downloader that allows users to download all images in a public-facing gallery. As more features are currently being added, it is currently in a private repository.
+
 ### Previews
 
 All widgets are currently live at [eightbyte-widgets.herokuapp.com](https://eightbyte-widgets.herokuapp.com).
