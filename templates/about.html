@@ -12,7 +12,20 @@
   About Me
 </h1>
 <div class="body-text">
-  <p>Hello! My name is Agnes and I'm an aspiring software engineer with an interest in financial tech. </p>
-  <p>In my free time, when I'm not <a href="https://48nes.github.io/projects/toyhouse/">building custom websites for artists and other creatives</a>, I enjoy exploring the city and struggling to keep up with the latest Netflix shows. </p>
+  <p>My name is Agnes and I'm an aspiring software engineer with an interest in financial tech. </p>
+  <p>In my free time, when I'm not <a href="https://48nes.github.io/projects/personal/toyhouse/">building custom websites for artists and other creatives</a>,
+      I'm an avid poetry consumer. You can check out the most recent quotes I've saved below!</p>
+  <div class="row no-gutters mx-n2">
+    <div class="col-lg-4 col-md-5 p-2">
+      <div class="container me-picture" style="background: url(https://i.pinimg.com/564x/15/20/ea/1520ea58987270688def2dece70f4559.jpg); background-size: cover; height: 420px;"></div>
+    </div>
+    <div class="col-lg-8 col-md-7 p-2">
+        <div class="d-flex flex-column" id="poetry">
+            <!-- poetry -->
+        </div>
+    </div>
+  </div>
 </div>
+
+<script src="{{ get_url(path="tumblr.js", trailing_slash=false) }}"></script>
 {% endblock content %}

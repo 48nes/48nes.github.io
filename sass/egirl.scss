@@ -139,6 +139,16 @@ a:hover, a:active, .active>a {
   box-shadow: 0px 0px 5px var(--darker-gray);
 }
 
+.me-picture {
+  box-shadow: 0 0 5px var(--darker-gray);
+  transition: .3s ease;
+}
+
+.me-picture:hover {
+  transform: rotate(-3deg);
+  transition: .3s ease;
+}
+
 .project-box {
   width: 260px;
 }
