@@ -149,6 +149,99 @@ a:hover, a:active, .active>a {
   transition: .3s ease;
 }
 
+.poetry-img {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px var(--darker-gray);
+  transition: .3s ease;
+}
+
+#poetry div:nth-child(even) .poetry-img:hover {
+  transform: rotate(-3deg);
+  transition: .3s ease;
+}
+
+#poetry div:nth-child(odd) .poetry-img:hover {
+  transform: rotate(3deg);
+  transition: .3s ease;
+}
+
+#poetry div:nth-child(1) {
+  animation: slideOne 3s ease;
+}
+
+#poetry div:nth-child(2) {
+  animation: slideTwo 5s ease;
+}
+
+#poetry div:nth-child(3) {
+  animation: slideThree 8s ease;
+}
+
+@keyframes slideOne {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slideTwo {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slideThree {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.music-img, .music-pfp {
+  box-shadow: 0 0 5px var(--darker-gray);
+  transition: .3s ease;
+}
+
+.music-img:hover {
+  transform: translateY(-10px);
+  transition: .3s ease;
+}
+
+a.now-playing img {
+  animation: pulse 1s infinite ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 .project-box {
   width: 260px;
 }

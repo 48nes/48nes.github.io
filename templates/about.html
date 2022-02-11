@@ -14,18 +14,95 @@
 <div class="body-text">
   <p>My name is Agnes and I'm an aspiring software engineer with an interest in financial tech. </p>
   <p>In my free time, when I'm not <a href="https://48nes.github.io/projects/personal/toyhouse/">building custom websites for artists and other creatives</a>,
-      I'm an avid poetry consumer. You can check out the most recent quotes I've saved below!</p>
+      I'm an avid poetry and music fanatic. Here's what I've been consuming recently!</p>
   <div class="row no-gutters mx-n2">
-    <div class="col-lg-4 col-md-5 p-2">
-      <div class="container me-picture" style="background: url(https://i.pinimg.com/564x/15/20/ea/1520ea58987270688def2dece70f4559.jpg); background-size: cover; height: 420px;"></div>
-    </div>
-    <div class="col-lg-8 col-md-7 p-2">
-        <div class="d-flex flex-column" id="poetry">
+      <div class="col-lg-4 col-md-5 p-2">
+        <div class="container me-picture" style="background: url(https://media.discordapp.net/attachments/532357838656372736/941787710752968754/unknown.png?width=856&height=1133); background-size: cover; height: 420px;"></div>
+      </div>
+      <div class="col-lg-8 col-md-7 p-2">
+        <div class="d-flex flex-column align-items-center" style="height: 420px;" id="poetry">
             <!-- poetry -->
         </div>
-    </div>
+      </div>
+      <div class="col-12 py-md-4 py-3">
+          <h3 id="music-title"></h3>
+      </div>
+      <div class="col-lg-8 col-md-7 px-2">
+        <div class="row no-gutters mx-n2" id="music">
+            <!-- music -->
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-5 p-2">
+          <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+              <div class="rounded-circle music-pfp" style="background: url(https://lastfm.freetls.fastly.net/i/u/avatar170s/40666c58898c9c6f470f293847073c5a.gif); background-size: cover; width: 175px; height: 175px;"></div>
+              <p class="mt-3">
+                  Come say hi to me on <a href="https://www.last.fm/user/friedeggnes">last.fm</a>!
+              </p>
+          </div>
+      </div>
   </div>
 </div>
 
-<script src="{{ get_url(path="tumblr.js", trailing_slash=false) }}"></script>
+<script type="text/javascript" src="https://eggscellence.tumblr.com/api/read/json?tagged=words&num=4&type=photo"></script>
+
+<script type="text/javascript">
+    // The variable "tumblr_api_read" is now set.
+    var first = tumblr_api_read['posts'][0]['regular-body'];
+    var second = tumblr_api_read['posts'][1]['regular-body'];
+    var third = tumblr_api_read['posts'][2]['regular-body'];
+
+    var element = document.createElement('div');
+    element.innerHTML = first + second + third;
+    var imgs = element.getElementsByTagName('img');
+
+    var poetryDiv = document.getElementById('poetry');
+    for (let i = 0; i < 3; i++) {
+        var imgToAddSrc = imgs[i].src;
+        var imgToAdd = document.createElement("img");
+        imgToAdd.src = imgToAddSrc;
+        imgToAdd.classList.add("poetry-img")
+        var divToAdd = document.createElement("div");
+        divToAdd.classList.add("my-2", "h-100");
+        divToAdd.appendChild(imgToAdd);
+        poetryDiv.appendChild(divToAdd);
+    }
+</script>
+
+<script type="text/javascript">
+    var url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=friedeggnes&api_key=%= LFM_API_KEY %&format=json";
+    fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var recentTracks = data['recenttracks']['track'];
+        var musicDiv = document.getElementById('music');
+        for (let i = 0; i < 9; i++) {
+            var musicContainer = document.createElement("div");
+            musicContainer.classList.add("col-md-4", "col-6", "p-2");
+            var musicLink = document.createElement("a");
+            if (i == 0) {
+                if (recentTracks[i]["@attr"]) {
+                    musicLink.classList.add("now-playing");
+                    var musicTitle = document.getElementById("music-title");
+                    musicTitle.innerText = "now playing...";
+                } else {
+                    var musicTitle = document.getElementById("music-title");
+                    musicTitle.innerText = "recently played";
+                }
+            }
+            musicLink.href = recentTracks[i]["url"];
+            var musicImg = document.createElement("img");
+            musicImg.classList.add("w-100", "music-img");
+            musicImg.src = recentTracks[i]["image"][3]["#text"];
+            musicLink.appendChild(musicImg);
+            musicContainer.appendChild(musicLink);
+            musicDiv.appendChild(musicContainer);
+        }
+        console.log(data['recenttracks']['track']);
+    })
+    .catch(function (err) {
+        console.log("Something went wrong!", err);
+    });
+</script>
 {% endblock content %}
