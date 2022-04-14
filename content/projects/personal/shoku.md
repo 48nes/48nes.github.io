@@ -13,6 +13,6 @@ category = "Fullstack"
 
 This project is currently a work in progress and will be ready to launch towards the end of April.
 
-Shoku is a pokemon-like mini game featuring battling between various different "Shokus". Each shoku is a food-themed character. The site utilizes Python and MySQL on the backend and HTML, CSS, and JavaScript for the frontend. It is currently being hosted [here]() through Heroku.
+Shoku is a pokemon-like mini game featuring battling between various different "Shokus". Each shoku is a food-themed character. The site utilizes Python and MySQL on the backend and HTML, CSS, and JavaScript for the frontend. It will be hosted through Heroku.
 
 Special thanks to [Nick Bacskai](https://github.com/nbacskai) and [Carter](https://github.com/darling) for working with me on this project. 
