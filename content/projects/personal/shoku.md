@@ -8,6 +8,7 @@ secondary-language = ["CSS"]
 image = "https://github.com/48nes/48nes.github.io/blob/main/public/shoku.PNG?raw=true"
 category = "Fullstack"
 +++
+
 <img src="https://github.com/48nes/48nes.github.io/blob/main/public/shoku.PNG?raw=true" style="width: 100%;">
 
 This project is currently a work in progress and will be ready to launch towards the end of April.
