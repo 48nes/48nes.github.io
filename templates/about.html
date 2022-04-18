@@ -20,7 +20,7 @@
         <div class="container me-picture" style="background: url(https://github.com/48nes/48nes.github.io/blob/main/static/me%20lol.png?raw=true); background-size: cover; height: 420px;"></div>
       </div>
       <div class="col-lg-8 col-md-7 p-2">
-        <div class="d-flex flex-column align-items-center overflow-hidden" style="height: 420px;" id="poetry">
+        <div class="d-flex flex-column align-items-center" style="height: 420px;" id="poetry">
             <!-- poetry -->
         </div>
       </div>
@@ -43,27 +43,26 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://eggscellence.tumblr.com/api/read/json?tagged=words&num=4&type=photo"></script>
+<script type="text/javascript" src="https://48nes.tumblr.com/api/read/json?num=4&type=photo"></script>
 
 <script type="text/javascript">
     // The variable "tumblr_api_read" is now set.
-    var first = tumblr_api_read['posts'][0]['regular-body'];
-    var second = tumblr_api_read['posts'][1]['regular-body'];
-    var third = tumblr_api_read['posts'][2]['regular-body'];
-
-    var element = document.createElement('div');
-    element.innerHTML = first + second + third;
-    var imgs = element.getElementsByTagName('img');
 
     var poetryDiv = document.getElementById('poetry');
     for (let i = 0; i < 3; i++) {
-        var imgToAddSrc = imgs[i].src;
+        var element = document.createElement('div');
+    element.innerHTML = tumblr_api_read['posts'][i]['regular-body'];
+    var firstImg = element.getElementsByTagName('img')[0];
+    var firstLink = element.getElementsByTagName('a')[0];
+        var linkToAdd = document.createElement("a");
         var imgToAdd = document.createElement("img");
-        imgToAdd.src = imgToAddSrc;
+        imgToAdd.src = firstImg.src;
+        linkToAdd.href = firstLink.href;
         imgToAdd.classList.add("poetry-img")
         var divToAdd = document.createElement("div");
         divToAdd.classList.add("my-2", "h-100");
-        divToAdd.appendChild(imgToAdd);
+        divToAdd.appendChild(linkToAdd);
+        linkToAdd.appendChild(imgToAdd);
         poetryDiv.appendChild(divToAdd);
     }
 </script>
@@ -91,6 +90,11 @@
                     musicTitle.innerText = "recently played";
                 }
             }
+
+	    if (i > 3) {
+	        musicContainer.classList.add("d-none", "d-md-block");
+	    }
+
             musicLink.href = recentTracks[i]["url"];
             var musicImg = document.createElement("img");
             musicImg.classList.add("w-100", "music-img");
@@ -99,7 +103,6 @@
             musicContainer.appendChild(musicLink);
             musicDiv.appendChild(musicContainer);
         }
-        console.log(data['recenttracks']['track']);
     })
     .catch(function (err) {
         console.log("Something went wrong!", err);
