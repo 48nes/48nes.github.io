@@ -3,11 +3,11 @@ html {
   --fade-gray: #2a2a2b;
   --dark-gray: #1b1a1c;
 
-  --fade-purple: #e7c7f5;
-  --dark-purple: #7d6a9e;
+  --fade-purple: #b5a5c8;
+  --dark-purple: #7c7484;
 
-  --fade-pink: #fbdddb;
-  --dark-pink: #bc8da7;
+  --fade-pink: #b0a8b9;
+  --dark-pink: #fdf7ff;
 }
 
 html[data-theme='dark'] {
@@ -15,11 +15,11 @@ html[data-theme='dark'] {
   --fade-gray: #2a2a2b;
   --dark-gray: #1b1a1c;
 
-  --fade-purple: #e7c7f5;
-  --dark-purple: #7d6a9e;
+  --fade-purple: #b5a5c8;
+  --dark-purple: #7c7484;
 
-  --fade-pink: #fbdddb;
-  --dark-pink: #bc8da7;
+  --fade-pink: #b0a8b9;
+  --dark-pink: #fdf7ff;
 }
 
 html[data-theme='light'] {
@@ -27,11 +27,11 @@ html[data-theme='light'] {
   --fade-gray: #f3f2f7;
   --dark-gray: #e4e3e8;
 
-  --fade-purple: #ae98d4;
-  --dark-purple: #7d6a9e;
+  --fade-purple: #7c7484;
+  --dark-purple: #b5a5c8;
 
-  --fade-pink: #bc8da7;
-  --dark-pink: #785167;
+  --fade-pink: #b0a8b9;
+  --dark-pink: #4b4453;
 
   .theme-toggle button i:before {
     content: '\f186';
