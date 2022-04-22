@@ -1,5 +1,5 @@
 +++
-title = "48nes.github.io"
+title = "48n.es"
 description = "48nes"
 date = 2021-08-11
 [taxonomies]
@@ -13,7 +13,7 @@ category = "Frontend"
 
 <img src="https://i.imgur.com/4e5lEmC.png" alt="homepage image" width="100%" style="box-shadow: 0px 0px 5px #000000; margin-bottom: 20px;"/>
 
-[48nes.github.io](https://48nes.github.io) is a personal portfolio site I created to showcase my work. 
+[48n.es](https://48n.es) is a personal portfolio site I created to showcase my work. You are currently here.
 
 #### Features 
 
