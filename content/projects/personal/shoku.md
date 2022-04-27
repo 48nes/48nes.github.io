@@ -9,7 +9,7 @@ image = "https://github.com/48nes/48nes.github.io/blob/main/public/shoku.PNG?raw
 category = "Fullstack"
 +++
 
-This project is currently a work in progress. The below is the Alpha version created alongside [Nick Bacskia](https://github.com/nbacskai) for CS3200: Database Design. 
+This project is currently a work in progress. The below is the Alpha version created alongside [Nick Bacskai](https://github.com/nbacskai) for CS3200: Database Design. 
 
 #### Video Demo
 
