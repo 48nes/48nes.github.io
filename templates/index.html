@@ -8,25 +8,34 @@
 {% endblock script %}
 
 {% block content %}
-<h1 class="title typewriter">
-  Agnes Shan
-</h1>
-<div class="body-text">
-  <p>Hello! I'm currently a student at Northeastern University, pursuing a combined major in Computer Science and Business with a concentration in Fintech. </p>
-  <h2 class="mt-5">Contact</h2>
-  <div class="d-flex flex-row flex-wrap" style="font-size: 24px;">
-    <a href="mailto:agnesshan@live.com" class="mx-3 contact-link">
-      <i class="fas fa-envelope mr-2"></i>
-      <span>email</span>
-    </a>
-    <a href="https://www.linkedin.com/in/agnes-shan/" class="mx-3 contact-link">
-      <i class="fab fa-linkedin mr-2"></i>
-      <span>linkedin</span>
-    </a>
-    <a href="https://github.com/48nes" class="mx-3 contact-link">
-      <i class="fab fa-github mr-2"></i>
-      <span>github</span>
-    </a>
+<div class="d-flex flex-column justify-content-center" id="profile-info">
+  <div class="row no-gutters">
+    <div class="col-lg-8 col-md-7 p-2">
+      <h5 class="text-primary">Hello, I'm</h5>
+      <h1 class="typewriter mb-3">
+        Agnes Shan
+      </h1>
+      <p class="text-uppercase">Software Engineer . Web Developer</p>
+      <p>I'm currently a student at Northeastern University, pursuing a combined major in Computer Science and Business with a concentration in Fintech. </p>
+      <h4 class="mt-4">Get in Touch!</h4>
+      <div class="d-flex flex-row flex-wrap mx-n3" style="font-size: 24px;">
+        <a href="mailto:agnesshan@live.com" class="mx-3 contact-link">
+          <i class="fas fa-envelope mr-2"></i>
+          <span>email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/agnes-shan/" class="mx-3 contact-link">
+          <i class="fab fa-linkedin mr-2"></i>
+          <span>linkedin</span>
+        </a>
+        <a href="https://github.com/48nes" class="mx-3 contact-link">
+          <i class="fab fa-github mr-2"></i>
+          <span>github</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-5 p-2">
+      <!-- most recent project -->
+    </div>
   </div>
 </div>
 {% endblock content %}
