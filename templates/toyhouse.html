@@ -8,5 +8,27 @@
 {% endblock script %}
 
 {% block content %}
+<div>
+  <h3 class="roboto-mono">{{ page.title }}</h3>
+  <h5 class="font-weight-normal mb-0">{{ page.date }}</h5>
+  <p class="text-primary mx-n1">
+    {% for language in page.extra.languages %}
+    <span class="m-1">#{{ language }}</span>
+    {% endfor %}
+  </p>
+  <div class="row no-gutters my-3">
+    <div class="col-lg-7 col-md-5 p-2">
 
+    </div>
+    <div class="col-lg-5 col-md-7 p-2 d-flex flex-column justify-content-center align-items-end text-right">
+      <p class="text-primary mb-0">so what is</p>
+      <h4 class="roboto-mono">toyhouse?</h4>
+      <p>Toyhou.se is a character management site used by artists and writers to organize and showcase their original
+        characters. Toyhou.se allows all users access to HTML customization of profiles and premium users access to CSS
+        customization. Toyhou.se uses the <a href="https://getbootstrap.com/%22%3EBootstrap">bootstrap</a> framework for all
+        pages.</p>
+    </div>
+  </div>
+  <p>Currently, all my HTML and SCSS files are being kept in a private repository. If you're interested in seeing the raw files, shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a> You can view some of my best HTML and SCSS work below.</p>
+</div>
 {% endblock content %}
