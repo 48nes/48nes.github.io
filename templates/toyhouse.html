@@ -17,17 +17,33 @@
     {% endfor %}
   </p>
   <div class="row no-gutters my-3">
-    <div class="col-lg-7 col-md-5 p-2">
-
+    <div class="col-lg-7 col-md-5 p-2 text-center">
+      <a class="project-box mb-2">
+        <img src="https://github.com/48nes/48nes.github.io/blob/main/public/defaultth.PNG?raw=true" class="project-thumbnail" style="height: 300px;">
+      </a>
+      <small>a default character page on toyhou.se without any CSS styling</small>
     </div>
     <div class="col-lg-5 col-md-7 p-2 d-flex flex-column justify-content-center align-items-end text-right">
       <p class="text-primary mb-0">so what is</p>
       <h4 class="roboto-mono">toyhouse?</h4>
-      <p>Toyhou.se is a character management site used by artists and writers to organize and showcase their original
+      <p><a href="https://toyhou.se">Toyhou.se</a> is a character management site used by artists and writers to organize and showcase their original
         characters. Toyhou.se allows all users access to HTML customization of profiles and premium users access to CSS
         customization. Toyhou.se uses the <a href="https://getbootstrap.com/%22%3EBootstrap">bootstrap</a> framework for all
         pages.</p>
     </div>
+  </div>
+  <p class="text-primary mb-0 text-center">some of my favorite</p>
+  <h4 class="roboto-mono text-center">rethemes</h4>
+  <p class="text-center">I create both CSS stylesheets and pre-made HTML layouts outside of custom work. Here are some of my favorite CSS stylesheets I've made.</p>
+  <div class="row no-gutters justify-content-center mx-n2 mb-3">
+    {% for retheme in page.extra.featured_projects %}
+    <div class="col-md-4 col-6 p-2">
+      <a href="{{ retheme.link }}" class="project-box pb-2">
+        <img src="{{ retheme.image }}" class="project-thumbnail" style="height: 200px;">
+        <span>{{ retheme.title }}</span>
+      </a>
+    </div>
+    {% endfor %}
   </div>
   <p>Currently, all my HTML and SCSS files are being kept in a private repository. If you're interested in seeing the raw files, shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a> You can view some of my best HTML and SCSS work below.</p>
 </div>
