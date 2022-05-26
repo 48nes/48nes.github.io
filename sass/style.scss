@@ -188,17 +188,20 @@ a {
   padding: 10px;
 }
 
-.mobile-header button, .theme-toggle button {  
-  color: var(--fade-pink);
-  font-size: 32px;
-}
+.mobile-header, .theme-toggle { 
+  button {
+    color: var(--fade-pink);
+    font-size: 32px;
 
-.mobile-header button:hover, .theme-toggle button:hover {
-  color: var(--dark-pink);
-}
+    &:hover {
+      color: var(--dark-pink);
+    }
 
-.mobile-header button:focus, .theme-toggle button:focus {
-  box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
+
+  } 
 }
 
 .me-picture {
@@ -288,6 +291,14 @@ a.now-playing img {
     transform: scale(1.05, 1.05);
     transition: .3s ease;
   }
+}
+
+.logo-img {
+  transform: scale(1.75, 1.75);
+  position: relative;
+  left: -30%;
+  z-index: -1;
+  opacity: .7;
 }
 
 @media screen and (min-width: 767px) {
