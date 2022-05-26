@@ -1,8 +1,6 @@
 +++
 title = "Personal Projects"
-sort_by = "date"
+weight = 1
+sort_by = "weight"
 template = "projects.html"
-page_template = "project-page.html"
-[extra]
-categories = [ "Fullstack", "Backend", "Frontend" ]
 +++

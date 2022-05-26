@@ -1,12 +1,9 @@
 +++
 title = "Tastemakers"
 date = 2022-02-03
-[taxonomies]
-primary-language = ["JavaScript"]
-secondary-language = ["CSS"]
 [extra]
 image = "https://github.com/48nes/48nes.github.io/blob/main/static/tmm.PNG?raw=true"
-category = "Fullstack"
+languages = ["JavaScript", "Python", "CSS"]
 +++
 <iframe src="https://www.tastemakersmag.com/"></iframe>
 

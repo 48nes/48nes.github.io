@@ -6,9 +6,14 @@
 </script>
 {% endblock script %}
 {% block content %}
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
+<div>
+  <h3 class="roboto-mono">{{ page.title }}</h3>
+  <h5 class="font-weight-normal mb-0">{{ page.date }}</h5>
+  <p class="text-primary mx-n1">
+    {% for language in page.extra.languages %}
+    <span class="m-1">#{{ language }}</span>
+    {% endfor %}
+  </p>
+  {{ page.content | safe }}
+</div>
 {% endblock content %}

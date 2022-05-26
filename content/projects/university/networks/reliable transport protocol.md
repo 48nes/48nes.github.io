@@ -1,11 +1,9 @@
 +++
 title = "Reliable Transport Protocol"
 date = 2021-11-05
-[taxonomies]
-primary-language = ["Python"]
 [extra]
 image = "https://www.gaithersburgdental.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
-category = "Networks and Distributed Systems"
+languages = ["Python"]
 +++
 This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at [agnesshan@live.com](mailto:agnesshan@live.com).
 

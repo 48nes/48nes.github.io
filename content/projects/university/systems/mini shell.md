@@ -1,11 +1,9 @@
 +++
 title = "Mini Shell"
 date = 2022-03-03
-[taxonomies]
-primary-language = ["C"]
 [extra]
 image = "https://github.com/48nes/48nes.github.io/blob/main/static/mini%20shell.PNG?raw=true"
-category = "Computer Systems"
+languages = ["Assembly"]
 +++
 This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at [agnesshan@live.com](mailto:agnesshan@live.com).
 

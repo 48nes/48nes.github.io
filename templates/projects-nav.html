@@ -8,42 +8,50 @@
 {% endblock script %}
 
 {% block content %}
-<h1 class="title typewriter">
-  Projects
-</h1>
-<div class="body-text">
-  <p>
-    Below are my most recent university and personal projects.
-  </p>
-  <div class="d-flex" style="justify-content: space-between; align-items: baseline;">
-    <h3>University Projects</h3>
-    <a href="/projects/university">View All</a>
+<div>
+  <div class="row no-gutters my-5">
+    <div class="col-lg-7 col-md-6 p-2 d-flex flex-column justify-content-center">
+      <h5 class="text-primary mb-0">featured project</h5>
+      <h1 class="typewriter mb-3">species hub</h1>
+      <p class="text-uppercase">#Next.JS #MongoDB</p>
+      <p>A personal project I've been working on (somewhat) recently as a way to familiarize myself with the <a
+          href="https://nextjs.org/">Next.js</a> framework and NoSQL.</p>
+      </div>
+    <div class="col-lg-5 col-md-6 p-2">
+      <a href="LINK" class="project-box">
+        <img src="" class="project-thumbnail" style="height: 250px;">
+      </a>
+    </div>
   </div>
-  <div class="d-flex flex-row flex-wrap">
-    {% set university = get_section(path='projects/university/_index.md') %}
-    {% for page in university.pages %}
-    {% if loop.index < 4 %}
-    <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box my-3">
-      <img src="{{ page.extra.image }}" class="project-thumbnail">
-      <span>{{ page.title }}</span>
-    </a>
-    {% endif %}
+  {% for subsection_name in section.subsections %}
+  <div class="row no-gutters mb-5">
+  {% set subsection = get_section(path=subsection_name) %}
+    <div class="col-12 text-center p-2">
+      <h5 class="text-primary mb-0">most recent</h5>
+      <h1 class="roboto-mono mb-3">{{ subsection.title }}</h1>
+      <p>Check out all of my {{ subsection.title|lower }} <a href="{{ subsection.path }}">here</a>!</p>
+    </div>     
+    {% set_global total = 1 %}
+    {% for subsubsection_name in subsection.subsections|reverse %}
+      {% set subsubsection = get_section(path=subsubsection_name) %}
+      {% for page in subsubsection.pages %}
+        {% if total < 4%}        
+        <div class="col-md-4 col-6 p-2"> 
+            <a href="{{ page.permalink }}" class="project-box">
+              <img src="{{ page.extra.image }}" class="project-thumbnail">
+              <span>{{ page.title }}</span>
+              <small class="mb-1">
+                {% for language in page.extra.languages %}
+                  #{{ language }} 
+                {% endfor %}
+              </small>
+            </a>
+        </div>
+        {% endif %}
+      {% set_global total = total + 1 %}
+      {% endfor %}
     {% endfor %}
   </div>
-  <div class="d-flex" style="justify-content: space-between; align-items: baseline;">
-    <h3>Personal Projects</h3>
-    <a href="/projects/personal">View All</a>
-  </div>
-  <div class="d-flex flex-row flex-wrap">
-    {% set personal = get_section(path='projects/personal/_index.md') %}
-    {% for page in personal.pages %}
-    {% if loop.index < 4 %}
-    <a href="{{ page.permalink | safe }}" class="container d-flex flex-column align-items-center project-box my-3">
-      <img src="{{ page.extra.image }}" class="project-thumbnail">
-      <span>{{ page.title }}</span>
-    </a>
-    {% endif %}
-    {% endfor %}
-  </div>
+  {% endfor %}
 </div>
 {% endblock content %}

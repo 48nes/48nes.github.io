@@ -8,112 +8,115 @@
 {% endblock script %}
 
 {% block content %}
-<h1 class="title typewriter">
-  Resume
-</h1>
-<div class="body-text">
-  <p>If you would prefer a PDF version, <a href="/resume.pdf">here's my condensed resume</a>.</p>
-  <h2>Get in Contact</h2>
-  <div class="row no-gutters">
-    <div class="col-md-6 col-12 p-1">
-      <span><i class="fas fa-phone mr-2"></i>425-628-1608</span>
+<div>
+  <div class="row no-gutters mt-5">
+    <div class="col-lg-6 col-md-6 p-2">
+      <iframe src="/resume.pdf" class="w-100"></iframe>
     </div>
-    <div class="col-md-6 col-12 p-1">
-      <span><i class="fas fa-globe mr-2"></i><a href="https://48n.es">48n.es</a></span>
+    <div class="col-lg-6 col-md-6 p-2 d-flex flex-column justify-content-center">
+      <h5 class="text-primary mb-0">here's my</h5>
+      <h1 class="typewriter mb-2">condensed resume</h1>
+      <p>(you can also download it <a href="/resume.pdf">here</a>!)</p>
     </div>
-    <div class="col-md-6 col-12 p-1">
-      <span><i class="fab fa-linkedin mr-2"></i><a href="https://www.linkedin.com/in/agnes-shan/">linkedin.com/in/agnes-shan</a></span>
-    </div>
-    <div class="col-md-6 col-12 p-1">
-      <span><i class="fas fa-envelope mr-2"></i><a href="mailto:agnesshan@live.com">agnesshan@live.com</a></span>
+    <div class="col-12 p-2 my-4 text-center">
+      <h5 class="text-primary mb-0">... and here's some more information about</h5>
+      <h1 class="roboto-mono">my experiences</h1>
     </div>
   </div>
-  <h2 class="mt-4">Education</h2>
   <div class="row no-gutters">
-    <div class="col-4 p-1">
-      <strong class="resume-date">2020 - 2024</strong>
-      <p> BS, Computer Science and Business </p>
+    <div class="col-lg-4 col-md-5 p-2 d-flex align-items-center">
+      <h3 class="roboto-mono text-primary">education</h3>
     </div>
-    <div class="col-8 p-1">
-      <strong>Northeastern University</strong>
-      <ul>
-        <li><em>Honors:</em> Northeastern Honors College, Dean's List 2020-2022</li>
-        <li><em>GPA:</em> 3.76 / 4.00</li>
-        <li><em>Relevant Coursework</em> Algorithms, Object-Oriented Design, Networks and Distributed Systems, Computer Systems, Database Design, Investments, Fintech and Financial Innovation, Financial Management</li>
+    <div class="col-lg-8 col-md-7 p-2">
+      <h5 class="d-flex justify-content-between">
+        <strong>Northeastern University</strong>
+        <span class="font-weight-normal text-primary">September 2020 - June 2024</span>
+      </h5>
+      <p class="font-italic">Khoury College of Computer Sciences</p>
+      <ul class="list-unstyled pl-3">
+        <li><strong>Honors:</strong> Honors College, Dean's List 2020-2022</li>
+        <li><strong>GPA:</strong> 3.76 / 4.00</li>
+        <li><strong>Relevant Coursework:</strong> Algorithms, Object-Oriented Design, Networks and
+          Distributed Systems, Computer Systems, Database Design, Investments,
+          Fintech and Financial Innovation, Financial Management
+        </li>
       </ul>
-    </div>
-    <div class="col-4 p-1">
-      <strong class="resume-date">2016 - 2020</strong>
-      <p> High School Diploma </p>
-    </div>
-    <div class="col-8 p-1">
-      <strong>Interlake High School</strong>
-      <ul>
-        <li><em>Honors:</em> IB Diploma recipient, Physics HL, English Literature HL, History of the Americas HL, Business Management HL, Math SL, French SL</li>
-        <li><em>GPA:</em> 4.00 / 4.00</li>
+      <!-- high school -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Interlake High School</strong>
+        <span class="font-weight-normal text-primary">September 2016 - June 2020</span>
+      </h5>
+      <p class="font-italic">International Baccalaureate Diploma Recipient</p>
+      <ul class="list-unstyled pl-3">
+        <li><strong>Honors:</strong> International Baccalaureate Candidate, AP Scholar</li>
+        <li><strong>GPA:</strong> 4.00 / 4.00</li>
+        <li><strong>Relevant Coursework:</strong> IB Physics HL, IB History of the Americas HL, IB Literature HL, IB Business
+          Management HL, IB Mathematics SL, IB French SL
+        </li>
       </ul>
     </div>
   </div>
-  <h2 class="mt-4">Computer Knowledge + Skills</h2>
-  <p><strong>Languages:</strong> Java | Python | PostgreSQL | HTML | CSS/SASS | C++</p>
-  <p><strong>Systems:</strong> Windows | Linux</p>
-  <p><strong>Applications:</strong> Microsoft Office Suite | IntelliJ | Eclipse </p>
-  <h2 class="mt-4">Experience</h2>
-  <div class="row no-gutters">
-    <div class="col-4 p-1">
-      <strong class="resume-date">February 2020 - Present</strong>
+  <!-- skills -->
+  <div class="row no-gutters my-5">
+    <div class="col-lg-4 col-md-5 p-2 order-md-2 order-1 d-flex align-items-center justify-content-end text-right">
+      <h3 class="roboto-mono text-primary">computer knowledge + skills</h3>
     </div>
-    <div class="col-8 p-1">
-      <strong>Web Design</strong>
-      <ul>
-        <li>Launched my own web design business and shop, serving over 200 customers within one year of launch</li>
-        <li>Built web applications and static sites using Python, JavaScript, HTML, and CSS/SASS</li>
-	<li>Expanded customer base by developing applications to boost engagement</li>
-	<li>Generated revenue through multiple channels of distribution</li>
+    <div class="col-lg-8 col-md-7 p-2 order-md-1 order-2">
+      <ul class="list-unstyled">
+        <li class="my-1"><strong>Programming Languages:</strong> Python, Java, C++, JavaScript</li>
+        <li class="my-1"><strong>Other Languages:</strong> PostgreSQL, MySQL, HTML, CSS, SCSS</li>
+        <li class="my-1"><strong>Systems:</strong> Windows, Linux</li>
+        <li class="my-1"><strong>Other Technologies:</strong> <a href="https://nextjs.org">Next.js</a>, <a
+            href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a>, <a href="https://www.djangoproject.com/">Django</a>,
+          <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://www.getzola.org/">Zola</a>, <a
+            href="https://github.com/">Git</a></li>
       </ul>
     </div>
-    <div class="col-4 p-1">
-      <strong class="resume-date">2019 - 2020</strong>
+  </div>
+  <!-- next section -->
+  <div class="row no-gutters my-5">
+    <div class="col-lg-4 col-md-5 p-2 d-flex align-items-center">
+      <h3 class="roboto-mono text-primary">experience</h3>
     </div>
-    <div class="col-8 p-1">
-      <strong>Intern at <a href="https://www.gocobuy.com/">CoBuy</a></strong>
-      <ul>
-        <li>Conducted quality assurance testing for site function</li>
+    <div class="col-lg-8 col-md-7 p-2">
+      <!-- fidelity -->
+      <!-- web dev -->
+      <h5 class="d-flex justify-content-between">
+        <strong><a href="https://toyhou.se/8byte">8byte</a> Web Design</strong>
+        <span class="font-weight-normal text-primary">February 2020 - Present</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Launched my own web design business and shop, serving over 200 customers within one
+          year of launch</li>
+        <li>Built web applications and static sites using Python, JavaScript, HTML, and CSS/SCSS</li>
+        <li>Expanded customer base by developing applications to boost engagement</li>
+        <li>Generated revenue through multiple channels of distribution</li>
+      </ul>
+      <!-- cobuy -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Intern at <a href="https://gocobuy.com">CoBuy</a></strong>
+        <span class="font-weight-normal text-primary">September 2019 - June 2020</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Conducted quality assurance testing for site functions</li>
+        <li>Audited partnership meetings and tracked potential networking opportunities</li>
+      </ul>
+      <!-- kumon -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Teaching Assistant at Kumon</strong>
+        <span class="font-weight-normal text-primary">October 2016 - November 2018</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Conducted quality assurance testing for site functions</li>
         <li>Audited partnership meetings and tracked potential networking opportunities</li>
       </ul>
     </div>
-    <div class="col-4 p-1">
-      <strong class="resume-date">2019 - 2020</strong>
-    </div>
-    <div class="col-8 p-1">
-      <strong>Lead Graphics at <a href="https://www.itsrealmagazine.org/">It's Real</a></strong>
-      <ul>
-        <li>Crafted graphics for It's Real's <a href="https://www.instagram.com/itsreal.official/?hl=en">instagram</a></li>
-        <li>Steered design choices</li>
-      </ul>
-    </div>
-    <div class="col-4 p-1">
-      <strong class="resume-date">2017 - 2020</strong>
-    </div>
-    <div class="col-8 p-1">
-      <strong>Co-founder at Bellevue AMC</strong>
-      <ul>
-        <li>Created worksheets and taught classes</li>
-        <li>Managed financial accounts</li>
-      </ul>
-    </div>
-    <div class="col-4 p-1">
-      <strong class="resume-date">2016 - 2018</strong>
-    </div>
-    <div class="col-8 p-1">
-      <strong>Tutor at Kumon</strong>
-      <ul>
-        <li>Reviewed lesson material with students</li>
-        <li>Recognize problems and recommend solutions to parents</li>
-      </ul>
-    </div>
   </div>
-  <h2 class="mt-4">Projects</h2>
-  <p>Please view my projects <a href="/projects">here</a>.</p>
+  <div>
+    <h3 class="roboto-mono text-primary text-center">
+      projects
+    </h3>
+    <p class="text-center">You can check out all of my projects over on my <a href="/projects">projects page</a>!</p>
+  </div>
 </div>
 {% endblock content %}

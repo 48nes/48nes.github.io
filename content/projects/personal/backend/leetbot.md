@@ -2,12 +2,9 @@
 title = "LeetBot"
 description = "leetbot"
 date = 2021-08-03
-[taxonomies]
-primary-language = ["Python"]
-secondary-language = ["PostgreSQL"]
 [extra]
 image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/leetbot.PNG"
-category = "Backend"
+languages = ["Python", "PostgreSQL"]
 +++
 
 LeetBot is a Discord bot that scrapes Leetcode user profiles and updates progress in real time. It is currently being viewable in [this repository](https://github.com/48nes/leetbot).

@@ -1,11 +1,9 @@
 +++
 title = "Web Crawler"
 date = 2021-11-19
-[taxonomies]
-primary-language = ["Python"]
 [extra]
 image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/webcrawler.PNG"
-category = "Networks and Distributed Systems"
+languages = ["Python"]
 +++
 This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at [agnesshan@live.com](mailto:agnesshan@live.com).
 

@@ -44,6 +44,11 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .text-primary {
   color: var(--fade-purple) !important;
 }
@@ -102,6 +107,7 @@ body {
     letter-spacing: 2px;
     font-family: 'Titillium Web', sans-serif;
     text-transform: uppercase;
+    transition: 1s ease;
 
     &:hover {
       color: var(--dark-pink);
@@ -195,21 +201,36 @@ a {
   box-shadow: none;
 }
 
-.project-thumbnail {
-  width: 250px;
-  height: 150px;
-  margin-bottom: 10px;
-  box-shadow: 0px 0px 5px var(--dark-gray);
-}
-
 .me-picture {
   box-shadow: 0 0 5px var(--dark-gray);
   transition: .3s ease;
+
+  &:hover {
+    transform: rotate(-3deg);
+    transition: .3s ease;
+  }
 }
 
-.me-picture:hover {
-  transform: rotate(-3deg);
-  transition: .3s ease;
+#poetry {
+  div {
+    &:nth-child(even) {
+      .poetry-img {
+        &:hover {
+          transform: rotate(-3deg);
+        }
+        transition: .3s ease;
+      }
+    }
+
+    &:nth-child(odd) {
+      .poetry-img {
+        &:hover {
+          transform: rotate(3deg);
+        }
+        transition: .3s ease;
+      }
+    }
+  }
 }
 
 .poetry-img {
@@ -219,70 +240,7 @@ a {
   transition: .3s ease;
 }
 
-#poetry div:nth-child(even) .poetry-img:hover {
-  transform: rotate(-3deg);
-  transition: .3s ease;
-}
-
-#poetry div:nth-child(odd) .poetry-img:hover {
-  transform: rotate(3deg);
-  transition: .3s ease;
-}
-
-#poetry div:nth-child(1) {
-  animation: slideOne 3s ease;
-}
-
-#poetry div:nth-child(2) {
-  animation: slideTwo 5s ease;
-}
-
-#poetry div:nth-child(3) {
-  animation: slideThree 8s ease;
-}
-
-@keyframes slideOne {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes slideTwo {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  40% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes slideThree {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  40% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.music-img, .music-pfp {
+.music-img {
   box-shadow: 0 0 5px var(--dark-gray);
   transition: .3s ease;
 
@@ -306,12 +264,29 @@ a.now-playing img {
 }
 
 .project-box {
-  width: 260px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--dark-gray);
+  transition: .3s ease;
+
+  .project-thumbnail {
+    width: 100%;
+    height: 150px;
+  }
+
+  span {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: var(--dark-pink);
+  }
 
   &:hover {
     text-decoration: none;
-    transform: scale(1.2);
-    transition: 1s ease;
+    box-shadow: 0px 0px 5px var(--dark-gray);
+    transform: scale(1.05, 1.05);
+    transition: .3s ease;
   }
 }
 

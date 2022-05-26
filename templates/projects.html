@@ -8,23 +8,23 @@
 {% endblock script %}
 
 {% block content %}
-<h1 class="title typewriter">
-  {{ section.title }}
-</h1>
-<div class="body-text">
-  <p>
-    {{ section.content | safe }}
-  </p>
-  {% for item in section.extra.categories %}
-    <h3>{{ item }}</h3>
-    <div class="d-flex flex-row flex-wrap justify-content-start">
-      {% for page in section.pages %}
-      {% if page.extra.category == item %}
-      <a href="{{ page.permalink | safe }}" class="d-flex flex-column align-items-center project-box my-3">
-        <img src="{{ page.extra.image }}" class="project-thumbnail">
-        <span>{{ page.title }}</span>
-      </a>
-      {% endif %}
+<div>
+  {% for subsection_name in section.subsections|reverse %}
+    {% set subsection = get_section(path=subsection_name) %}
+    <h3 class="roboto-mono">{{ subsection.title }}</h3>
+    <div class="row no-gutters mb-5">
+      {% for page in subsection.pages %}
+        <div class="col-md-4 col-6 p-2"> 
+            <a href="{{ page.permalink }}" class="project-box">
+              <img src="{{ page.extra.image }}" class="project-thumbnail">
+              <span>{{ page.title }}</span>
+              <small class="mb-1">
+                {% for language in page.extra.languages %}
+                  #{{ language }} 
+                {% endfor %}
+              </small>
+            </a>
+        </div>
       {% endfor %}
     </div>
   {% endfor %}

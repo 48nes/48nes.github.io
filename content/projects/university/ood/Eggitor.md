@@ -2,11 +2,9 @@
 title = "Eggitor"
 description = "eggitor"
 date = 2021-06-27
-[taxonomies]
-primary-language = ["Java"]
 [extra]
 image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/eggitor.PNG"
-category = "Object Oriented Design"
+languages = ["Java"]
 +++
 
 <figure class="video_container">

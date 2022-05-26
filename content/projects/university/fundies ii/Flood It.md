@@ -2,11 +2,9 @@
 title = "Flood It"
 description = "floodit"
 date = 2021-04-08
-[taxonomies]
-primary-language = ["Java"]
 [extra]
 image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/floodit.PNG"
-category = "Fundamentals of Computer Science II"
+languages = ["Java"]
 +++
 
 <figure class="video_container">

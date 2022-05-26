@@ -1,12 +1,9 @@
 +++
 title = "8byte Widgets"
 date = 2021-08-17
-[taxonomies]
-primary-language = ["Python"]
-secondary-language = ["HTML"]
 [extra]
 image = "https://raw.githubusercontent.com/48nes/48nes.github.io/main/static/8bw.PNG"
-category = "Fullstack"
+languages = ["Python", "HTML", "SCSS"]
 +++
 
 8byte Widgets are the name I've given to a set of small web apps I've built for use on the site [Toyhou.se](https://toyhou.se). The site is written in Python and built using the [Flask framework](https://flask.palletsprojects.com/en/2.0.x/). It is currently hosted through [Heroku](https://www.heroku.com/) using [Gunicorn](https://gunicorn.org/).

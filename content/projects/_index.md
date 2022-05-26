@@ -1,6 +1,5 @@
 +++
 title = "Projects"
-sort_by = "date"
+sort_by = "weight"
 template = "projects-nav.html"
-page_template = "project-page.html"
 +++

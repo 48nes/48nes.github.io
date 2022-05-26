@@ -8,26 +8,5 @@
 {% endblock script %}
 
 {% block content %}
-<h1 class="title">
-  Toyhouse Rethemes
-</h1>
-<div class="body-text">
-  <p>Creating custom rethemes for toyhou.se has been a long-term passion project of mine. Below you can view an overview of what toyhou.se is and an archive of some of my best work.</p>
-  <h4 class="mt-4">Toyhou.se</h4>
-  <p>Toyhou.se is a character management site used by artists and writers to organize and showcase their original characters. Toyhou.se allows all users access to HTML customization of profiles and premium users access to CSS customization. Toyhou.se uses the <a href="https://getbootstrap.com/">Bootstrap</a> framework for all pages.</p>
-  <p>Currently, all my HTML and SCSS files are being kept in a private repository. You can view some of my best HTML and SCSS work below.</p>
-  <h4 class="mt-4">Rethemes</h4>
-  <p>Here are some of my best rethemes:</p>
-  <div class="row no-gutters justify-content-center">
-    {% set ththemes = get_section(path='projects/personal/threthemes/_index.md') %}
-    {% for page in ththemes.pages %}
-    <div class="col-md-4 col-6 p-1">
-      <a href="{{ page.extra.link }}" class="container d-flex flex-column align-items-center project-box my-3">
-        <img src="{{ page.extra.image }}" class="project-thumbnail">
-        <span>{{ page.title }}</span>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+
 {% endblock content %}

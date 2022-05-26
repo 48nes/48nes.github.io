@@ -1,12 +1,9 @@
 +++
 title = "Shoku"
 date = 2022-04-13
-[taxonomies]
-primary-language = ["Python"]
-secondary-language = ["CSS"]
 [extra]
 image = "https://github.com/48nes/48nes.github.io/blob/main/public/shoku.PNG?raw=true"
-category = "Fullstack"
+languages = ["Python", "HTML", "SCSS"]
 +++
 
 This project is currently a work in progress. The below is the Alpha version created alongside [Nick Bacskai](https://github.com/nbacskai) for CS3200: Database Design. 

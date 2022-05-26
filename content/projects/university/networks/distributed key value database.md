@@ -1,11 +1,9 @@
 +++
 title = "Key Value Database"
 date = 2021-12-17
-[taxonomies]
-primary-language = ["Python"]
 [extra]
 image = "https://github.com/48nes/48nes.github.io/blob/main/static/keyvalue.PNG?raw=true"
-category = "Networks and Distributed Systems"
+languages = ["Python",]
 +++
 This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at [agnesshan@live.com](mailto:agnesshan@live.com).
 
