@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">Socket Basics</h3>
+  <h5 class="font-weight-normal mb-0">2021-09-29</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Python</span>
+    
+  </p>
+  <p>This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a>.</p>
+<h3 id="project-description">Project Description</h3>
+<p>For this project, I created a very simple client program to communicate with a server, both unencrypted and encrypted with TLS. The end goal of the project was to retrieve a secret flag from the server, after counting the number of times a character appeared in some random string.</p>
+<p>The following text is duplicated from the README for this project.</p>
+<h2 id="approach">Approach</h2>
+<p>My approach followed these steps in order:</p>
+<ol>
+<li>Get a list of all the arguments given</li>
+<li>Check for errors with arguments (i.e. less than 2 arguments, port given is incorrect)</li>
+<li>Depending on arguments, set port (or keep as default)</li>
+<li>Set host and NUID from arguments given</li>
+<li>Create a socket</li>
+<li>If the <code>-s</code> flag is seen, wraps the socket</li>
+<li>Connect the socket to the given host and port</li>
+<li>Send the first Hello message</li>
+</ol>
+<p>After these initial steps, a loop was executed while the server was sending &quot;FIND&quot; messages where:</p>
+<ol>
+<li>While a newline was not found in the FIND message, the client would wait for more bytes</li>
+<li>Once the entire message was read, the FIND string would be split into the <code>character</code> to be found within the <code>search_string</code>. </li>
+<li>A built in Python function would count the number of times the character appeared in the String.</li>
+<li>The count would be sent to the server.</li>
+<li>A new message would be read and checked to see if it was a FIND message, thus continuing the loop.</li>
+</ol>
+<p>Finally, once the message given by the server was not a FIND message, the client would print either the secret flag or Unknown_Husky_ID if the ID given was invalid.</p>
+<h2 id="challenges">Challenges</h2>
+<p>Luckily, most of the challenges I faced were (relatively) easily resolved. </p>
+<p>The first problem I faced was the original order in which I did things was:</p>
+<ol>
+<li>Get the message as bytes</li>
+<li>Split the bytes to find the character</li>
+<li>Count the number of times that specific byte appeared in the long byte message</li>
+</ol>
+<p>This led to a lot of difficulty with counting escaped characters, so I ended up changing the order to:</p>
+<ol>
+<li>Get the message as bytes</li>
+<li>Decode bytes to String</li>
+<li>Use the built-in Python function to count the number of times the character appeared</li>
+</ol>
+<p>The second problem I faced was testing on the Linux servers. This was, luckily, an even quicker fix. I hadn't realized the Linux servers didn't support Python above 3.6.8 and was previously using some 3.7 features (such as <code>with</code> and <code>.SSLContext()</code>).</p>
+<p>Both of the above were quick one line fixes to make my client compatible with lower versions of Python. </p>
+<h2 id="testing">Testing</h2>
+<p>Besides testing the general cases, I also made sure to test:</p>
+<ol>
+<li>Invalid port given with -p</li>
+<li>No port given with -p</li>
+<li>-p 27994 with -s</li>
+<li>Incorrect NUID</li>
+<li>Not enough arguments passed</li>
+</ol>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>

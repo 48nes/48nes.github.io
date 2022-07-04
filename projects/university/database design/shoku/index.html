@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">Shoku</h3>
+  <h5 class="font-weight-normal mb-0">2022-04-13</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Python</span>
+    
+    <span class="m-1">#HTML</span>
+    
+    <span class="m-1">#SCSS</span>
+    
+  </p>
+  <p>This project is currently a work in progress. The below is the Alpha version created alongside <a href="https://github.com/nbacskai">Nick Bacskai</a> for CS3200: Database Design. </p>
+<h4 id="video-demo">Video Demo</h4>
+<iframe src="https://www.youtube.com/embed/THBG_hOpjvw" frameborder="0" allowfullscreen="true"> </iframe>
+<h4 id="read-me">READ.ME</h4>
+<p>Our <code>READ.ME</code> for this project has been replicated below. The project is currently being hosted in a private repository, email me at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a> for inquiries.</p>
+<h1 id="shoku">Shoku</h1>
+<p>Shoku is a pokemon-like mini game featuring battling between various different &quot;Shokus&quot;. Each shoku is a food-themed character.</p>
+<h2 id="installing-and-running-locally">Installing and Running Locally</h2>
+<p>The shoku app is written in Python3 and it is recommended to run in a virtual environment. To create a virtual environment run </p>
+<p><code>python3 -m venv venv</code></p>
+<p>Then activate with </p>
+<p><code>.\venv\Scripts\activate</code> on Windows</p>
+<p>or </p>
+<p><code>source venv/bin/activate</code> on MacOS/Linux</p>
+<p>Once the environment is activated, install the required modules from the requirements.txt</p>
+<p><code>pip install -r requirements.txt</code></p>
+<p>To set up the database locally, first you have to create a .env file in the shoku root directory. There is an example named .env.example that you can copy from.
+The format is </p>
+<p><code>DATABASE_HOST= DATABASE_USER= DATABASE_PASSWORD=</code></p>
+<p>Once you have the .env file with correct info and the virtual environment activated, cd into the database folder and run the creation script.</p>
+<p><code>cd database python create_database.py</code></p>
+<p>If there are any errors, double check that you have the correct information in your .env file.
+Once the database is created you can go back to the project root folder and run the web server.</p>
+<p><code>cd .. python main.py</code></p>
+<p>Once that is running you can visit the webpage at <code>http://127.0.0.1:5000</code></p>
+<h2 id="about">About</h2>
+<p>Shoku was written in Python and uses MySQL databases. The site employs the Flask framework. It is currently only hosted locally.</p>
+<h3 id="credits">Credits</h3>
+<ul>
+<li><a href="https://github.com/48nes">Agnes Shan</a></li>
+<li><a href="https://github.com/nbacskai">Nick Bacskai</a></li>
+</ul>
+<p>Special thanks to <a href="https://github.com/darling">Carter</a> for the game idea and for lending us all the image assets used.</p>
+<h2 id="features">Features</h2>
+<p>Shoku's main feature allows users to collect and assemble various Shokus into teams.</p>
+<h2 id="implementation">Implementation</h2>
+<p>For each page, we would connect to the database in the backend. Data would then be queried, which we would present to the front-end.</p>
+<p>On several of these pages, forms were available in order for users to operate various functions to Create, Read, Update, and Delete tuples from the database.</p>
+<h2 id="future-features">Future Features</h2>
+<ul>
+<li>Password hashing for better security</li>
+<li>Support for team battles</li>
+<li>Support for pairing boosts</li>
+<li>Support for utensil boosts/item consumption</li>
+<li>Pagination and search functions for owned characters</li>
+<li>Battle stats for individuals and kitchens</li>
+<li>Support for more detailed user profiles, i.e. user profile pictures</li>
+</ul>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>

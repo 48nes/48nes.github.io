@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">Maze</h3>
+  <h5 class="font-weight-normal mb-0">2021-04-21</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Java</span>
+    
+  </p>
+  <figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/ePUF0i6sT_w" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<p>The Maze project was our final pair programming project for Fundamentals of Computer Science 2. </p>
+<p>Above is a video demo of our maze being solved using a DFS algorithm. Additional features include:</p>
+<ul>
+<li>Use of Kruskal's Algorithm for maze creation</li>
+<li>Click to finish rendering for maze creation</li>
+<li>End to start path highlighting</li>
+<li>Toggle between BFS/DFS/Manual (not shown)</li>
+</ul>
+<p>This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a>.</p>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>

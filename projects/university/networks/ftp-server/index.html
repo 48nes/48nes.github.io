@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">FTP Server</h3>
+  <h5 class="font-weight-normal mb-0">2021-10-01</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Python</span>
+    
+  </p>
+  <p>This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a>.</p>
+<h3 id="project-description">Project Description</h3>
+<p>The goal of this project was to develop a client for FTPS to securely transfer files to and from a FTPS server. </p>
+<p>The following text is duplicated from the README for this project.</p>
+<h2 id="approach">Approach</h2>
+<p>My program follows the following steps:</p>
+<ol>
+<li>Default arguments are set to ensure if optional arguments aren't given, the defaults are used.</li>
+<li>Arguments are parsed and kept in an array</li>
+<li>If no arguments are given, an error is thrown and the client quits.</li>
+<li>If the command given is not supported, an error is thrown and the client quits</li>
+<li>If the command is <code>ls</code>, <code>mkdir</code>, <code>rm</code>, or <code>rmdir</code>, the client checks that there is only one additional argument given (the URL). If there are extra arguments or insufficient arguments, an error is thrown. 
+<ol>
+<li>The URL is then parsed and default arguments are overridden if the optional is given in the URL. If no HOST or PATH is given, an error is thrown and the client quits.</li>
+</ol>
+</li>
+<li>If the command is <code>cp</code> or <code>mv</code>, the client checks that one of the arguments is a URL and the other is a local path. 
+<ol>
+<li>The URL is then parsed and default arguments are overridden if the optional is given in the URL. If no HOST or PATH is given, an error is thrown and the client quits.</li>
+<li>If both arguments are a local path or both paths are URLs, the client throws an error and quits.</li>
+<li>If the local path given is invalid, the client throws an error and quits.</li>
+</ol>
+</li>
+<li>Each command goes through the respective FTP command.</li>
+</ol>
+<h2 id="challenges">Challenges</h2>
+<ul>
+<li>When uploading file with STOR, not all the bytes were sending. This was addressed in Piazza post @260, with the solution being unwrapping and closing the data channel.</li>
+<li>After executing LIST on a directory, I wasn't receiving an end message from the control channel. This was also fixed by unwrapping and closing the data channel. </li>
+<li>Testing was a big challenge, as there were a lot more test cases for this client. I ended up listing all the possible cases (seen below) and going through them one by one. I didn't conclude testing until I was able to go through each test case in order without having to edit the client. </li>
+<li>Organization was also a big challenge. I started off by writing the FTP commands into different helper functions. However, this proved to be challenging when having to parse the args given in the command line. I ended up re-organizing the program to what it is now. </li>
+</ul>
+<h2 id="testing">Testing</h2>
+<p>The following tests were run both locally and on the Khoury linux machines:</p>
+<ul>
+<li>Testing different URLs formats passed:
+<ul>
+<li>ftps://ftp.3700.network/PATH</li>
+<li>ftps://ftp.3700.network</li>
+<li>ftps://user@ftp.3700.network/PATH</li>
+<li>ftps://user:pass@ftp.3700.network/PATH</li>
+<li>ftps://ftp.3700.network:21/PATH</li>
+<li>ftps://user:pass@ftp.3700.network:21/PATH</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>Testing invalid arguments:
+<ul>
+<li>No command given</li>
+<li>Too many arguments given</li>
+<li>Too little arguments given</li>
+</ul>
+</li>
+<li>Testing the different commands (Attempt meaning it was expected to fail):
+<ul>
+<li><code>ls</code>
+<ul>
+<li>Base directory, with &quot;/&quot; and &quot;&quot;</li>
+<li>One level</li>
+<li>Two level</li>
+<li>Three level</li>
+<li>Nonexistant directories</li>
+<li>Empty directories</li>
+<li>File given instead of directory</li>
+</ul>
+</li>
+<li><code>mkdir</code>
+<ul>
+<li>Create directory in &quot;/&quot;</li>
+<li>Attempt to recursively make two levels</li>
+<li>Two levels when first level exists</li>
+</ul>
+</li>
+<li><code>rm</code>
+<ul>
+<li>Delete file in &quot;/&quot;</li>
+<li>Delete file in subdirectory</li>
+<li>Attempt to delete nonexistant file</li>
+</ul>
+</li>
+<li><code>rmdir</code>
+<ul>
+<li>Delete directory in &quot;/&quot;</li>
+<li>Delete directory in a directory</li>
+<li>Attempt to delete directory with content</li>
+</ul>
+</li>
+<li><code>cp</code>
+<ul>
+<li>Copying local file to server
+<ul>
+<li>Image</li>
+<li>Text file</li>
+</ul>
+</li>
+<li>Copying server file to local
+<ul>
+<li>Image</li>
+<li>Text file</li>
+</ul>
+</li>
+<li>Attempt to copy nonexistant local file</li>
+<li>Attempt to copy to nonexistant server location</li>
+<li>Attempt to copy nonexistant server file</li>
+<li>Attempt to copy to nonexistant local location</li>
+<li>Overriding existing local file</li>
+<li>Overriding existing server file</li>
+<li>Attempt to copy local to local</li>
+<li>Attempt to copy server to server</li>
+</ul>
+</li>
+<li><code>mv</code>
+<ul>
+<li>Moving local file to server
+<ul>
+<li>Image</li>
+<li>Text file</li>
+</ul>
+</li>
+<li>Moving server file to local
+<ul>
+<li>Image</li>
+<li>Text file</li>
+</ul>
+</li>
+<li>Attempt to move nonexistant local file</li>
+<li>Attempt to move to nonexistant server location</li>
+<li>Attempt to move nonexistant server file</li>
+<li>Attempt to move to nonexistant local location</li>
+<li>Overriding existing local file</li>
+<li>Overriding existing server file</li>
+<li>Attempt to move local to local</li>
+<li>Attempt to move server to server</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>

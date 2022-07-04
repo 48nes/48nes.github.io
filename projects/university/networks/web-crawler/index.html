@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">Web Crawler</h3>
+  <h5 class="font-weight-normal mb-0">2021-11-19</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Python</span>
+    
+  </p>
+  <p>This project is currently in a private repository. If you would like a full demonstration of features, please shoot me an email at <a href="mailto:agnesshan@live.com">agnesshan@live.com</a>.</p>
+<h3 id="project-description">Project Description</h3>
+<p>The goal of this project was to implement a web crawler to retrieve a set of flags from a fairly large (fake) social media platform. </p>
+<h3 id="approach">Approach</h3>
+<p>We kept track of the &quot;frontier&quot;, or uncrawled URLs, in a queue. We also kept track of crawled URLs to avoid duplication. </p>
+<p>We started with adding only <code>/</code> to our frontier and then went page by page. On each page, we first searched for whether the secret flag occurred. If it hadn't, we would add all URLs to the frontier provided they had not appeared in our list of crawled URLs. We would then also append the URLs to our crawled URLs so the frontier would not feature duplicates.</p>
+<p>We also made sure to check the response given on each page. The following adjustments were made for each HTTP status code:</p>
+<ul>
+<li>302, the redirect URL was added to the front of the frontier so it would be the next-traversed page</li>
+<li>403, the page would be removed from the frontier and we would continue to the next page</li>
+<li>500, we would not remove the page from the frontier so the crawler would retry to load the page</li>
+</ul>
+<h3 id="other-notes">Other Notes</h3>
+<p>While we did not implement it for this project, I think it is appropriate to mention that in future web crawlers, to add parallelism to our algorithm. We were fairly lucky in our average run time for our web crawler was 3-6 minutes, however, in order for greater efficiency, parallelism would have let us rely not as heavily on luck.</p>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>

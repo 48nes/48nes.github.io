@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">LeetBot</h3>
+  <h5 class="font-weight-normal mb-0">2021-08-03</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#Python</span>
+    
+    <span class="m-1">#PostgreSQL</span>
+    
+  </p>
+  <p>LeetBot is a Discord bot that scrapes Leetcode user profiles and updates progress in real time. It is currently being viewable in <a href="https://github.com/48nes/leetbot">this repository</a>.</p>
+<h2 id="about">About</h2>
+<p>LeetBot is written entirely in Python and uses PostgreSQL for database management. The API we used can be found in <a href="https://github.com/ashdawngary/Leetcode-userapi">this repo</a>. </p>
+<h3 id="credits">Credits</h3>
+<p>Special thanks to the following for their help on this project!</p>
+<ul>
+<li><a href="https://github.com/rixuanzheng">Rixuan Zheng</a>, for helping to set up the PostgreSQL database on Heroku and adding the <code>+top</code> command</li>
+<li><a href="https://github.com/ashdawngary">Neel Bhalla</a>, for helping to write the API used</li>
+</ul>
+<h2 id="commands-and-features">Commands and Features</h2>
+<p>LeetBot's main feature is a live feed of all users' recent Leetcode submissions. The bot is currently set up to check for new submissions every 30 seconds, although this can be adjusted in <code>bot.py</code>.</p>
+<img src="https://i.imgur.com/Kgg26uK.png" alt="image of the live feed" width="300"/>
+<p>The command prefix for LeetBot is currently set to <code>+</code>. Below are a list of commands and what the bot will show when executed.</p>
+<p><code>+help</code> lists out all current bot commands:</p>
+<img src="https://i.imgur.com/7JVLVtY.png" alt="image of the help command" width="300"/>
+<p><code>+add [username]</code> allows users to link their Leetcode account to the bot if they do not already have an account linked and if the account given is a valid account</p>
+<img src="https://i.imgur.com/yOeyjuy.png" alt="image of user being linked" width="300"/>
+<p><code>+remove</code> allows users to unlink their Leetcode account from the bot</p>
+<img src="https://i.imgur.com/wdhih3r.png" alt="image of user being unlinked" width="300"/>
+<p><code>+top</code>, <code>+top easy</code>, <code>+top medium</code>, <code>+top hard</code> showcases the top ten users in terms of accepted solutions for all problems, only easy problems, only medium problems, and only hard problems</p>
+<img src="https://i.imgur.com/lpyBcHY.png" alt="image of leaderboards" height="500"/>
+<p><code>+my</code> showcases a user's own stats</p>
+<img src="https://i.imgur.com/4sqvdzw.png" alt="image of user's stats" width="300"/>
+<h4 id="admin-only-commands">Admin Only Commands</h4>
+<p>Admin only commands have a command prefix of <code>++</code>.</p>
+<p><code>++remove [username]</code> will remove a user from the database</p>
+<img src="https://i.imgur.com/VCBHjCX.png" alt="image of user being removed" width="300"/>
+<p><code>++set [channel]</code> sets the channel for messages to be sent to</p>
+<img src="https://i.imgur.com/qT39Epx.png" alt="image of channel being set" width="300"/>
+<p><code>++stop</code> will stop the live feed </p>
+<img src="https://i.imgur.com/K90O3ga.png" alt="image of feed being stopped" width="300"/>
+<h2 id="how-to-host">How to Host</h2>
+<p>Currently, we use <a href="https://dashboard.heroku.com/">Heroku</a> to run our version of the bot, but any alternative should work as well. This how-to will go over setting up using Heroku.</p>
+<h4 id="discord-bot-setup">Discord Bot Setup</h4>
+<ol>
+<li>Go to the <a href="https://discord.com/developers/applications">Discord Developer Portal</a> and create a new application</li>
+<li>In the Build a Bot tab, create a new bot. Where it says <code>TOKEN</code>, click copy to get the bot token and save this somewhere.</li>
+<li>Go to the OAuth2 tab. Under Scopes, choose bot and under Bot Permissions choose Administrator. Copy the URL given under the Scopes section, you can now use this URL to add the bot to your servers.</li>
+</ol>
+<h4 id="leetcode-setup">Leetcode Setup</h4>
+<ol>
+<li>Create a dummy account on <a href="https://leetcode.com/">Leetcode</a> with the same username and password. Save this somewhere.</li>
+</ol>
+<h4 id="heroku-setup">Heroku Setup</h4>
+<ol>
+<li>Fork this repo.</li>
+<li>Log into <a href="https://dashboard.heroku.com/">Heroku</a> using your Github account</li>
+<li>Create a new application by clicking on New and then App</li>
+<li>In Deploy, set Deployment method to Github and choose the forked repository</li>
+<li>Under Automatic deploys, enable automatic deploys</li>
+<li>Go back up to Settings. Under Config Vars, click reveal and add the bot token generated from Discord with <code>BOT_TOKEN</code> as the key and the bot token as the value.</li>
+<li>Add another config var with <code>ACCOUNT_KEY</code> as the key and the username/password for your dummy account as the value. </li>
+<li>Go back up to Resources. Under Dynos, select worker.</li>
+<li>Go to <a href="https://elements.heroku.com/addons/heroku-postgresql">Heroku Postgres</a> and click Install. Add the database to the Heroku app.</li>
+<li>The database should now be viewable from the Overview tab, click on the database</li>
+<li>Go to the Settings tab for the database and View Credentials, save this information somewhere</li>
+</ol>
+<h4 id="postgresql-setup">PostgreSQL Setup</h4>
+<ol>
+<li>Download <a href="https://www.postgresql.org/download/">PostgreSQL</a> locally</li>
+<li>Launch SQL Shell</li>
+<li>Follow prompts and enter in the data given from the last step on the Heroku setup</li>
+<li>Paste the following code into command prompt</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<code class="language-sql" data-lang="sql"><span style="color:#b48ead;">CREATE TABLE </span><span style="color:#c0c5ce;">IF NOT EXISTS </span><span style="color:#8fa1b3;">users</span><span style="color:#c0c5ce;"> (
+            discord_id </span><span style="color:#b48ead;">BIGINT PRIMARY KEY</span><span style="color:#c0c5ce;">,
+            leetcode_username </span><span style="color:#b48ead;">TEXT </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL</span><span style="color:#c0c5ce;">,
+            num_total </span><span style="color:#b48ead;">INTEGER </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL</span><span style="color:#c0c5ce;">,
+            num_easy </span><span style="color:#b48ead;">INTEGER </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL</span><span style="color:#c0c5ce;">,
+            num_medium </span><span style="color:#b48ead;">INTEGER </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL</span><span style="color:#c0c5ce;">,
+            num_hard </span><span style="color:#b48ead;">INTEGER </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL</span><span style="color:#c0c5ce;">,
+            total_subs </span><span style="color:#b48ead;">INTEGER </span><span style="color:#c0c5ce;">NOT </span><span style="color:#d08770;">NULL
+</span><span style="color:#c0c5ce;">        );
+</span></code></pre>
+<p>After following these steps, the bot should be up and running!</p>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>
