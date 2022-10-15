@@ -7,7 +7,7 @@ template = "toyhouse.html"
 image = "https://github.com/48nes/48nes.github.io/blob/main/public/toyhouse.PNG?raw=true"
 languages = ["HTML", "SCSS"]
 featured_projects = [
-    {"title" = "icarus", "image" = "https://f2.toyhou.se/file/f2-toyhou-se/images/46621506_S5IzM7l3JtGzDoi.png?1652217422", "link" = "https://toyhou.se/15287356.i-icarus"},
+    {"title" = "pink lemonade", "image" = "https://f2.toyhou.se/file/f2-toyhou-se/images/55733240_HBnzJNskESLQ0mT.png?1665088845", "link" = "https://toyhou.se/18293198.10-pink-lemonade"},
     {"title" = "minimalism", "image" = "https://f2.toyhou.se/file/f2-toyhou-se/images/48439698_kA0Axb8OpFlpjxA.png?1650915339", "link" = "https://toyhou.se/15730167.ii-minimalism"},
     {"title" = "hikaru nara", "image" = "https://f2.toyhou.se/file/f2-toyhou-se/images/48261731_uLlh89cugpKGQgM.png", "link" = "https://toyhou.se/16333257.iii-hikaru-nara"},
     {"title" = "delicacy", "image" = "https://f2.toyhou.se/file/f2-toyhou-se/images/45342074_cKp0jkz72sTraVe.png?1656025279", "link" = "https://toyhou.se/12454478.iv-delicacy"},
