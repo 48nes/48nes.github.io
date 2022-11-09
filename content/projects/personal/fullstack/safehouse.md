@@ -14,3 +14,11 @@ languages = ["TypeScript", "SCSS"]
 The project is an update on an old prototype created by [Carter](https://github.com/darling), known as [Bruhhouse](https://bruhhouse.vercel.app). 
 
 On November 4, 2022, another feature was added to the site to add inline color styling to templates. This feature was built in a one day sprint. 
+
+You can also read about my development process in the following blog posts on my web development blog! Parts 1-4 are a much shorter read, but I go much more in depth into my development process in Part 5, where I complete a major overhaul in redesigning my data structures to be recursive.
+
+- [Part 1](https://8byte.vercel.app/blog/safehouse-1) - the very first beta version of the site with only global variables
+- [Part 2](https://8byte.vercel.app/blog/safehouse-2) - adding input types and basic loop implementation
+- [Part 3](https://8byte.vercel.app/blog/safehouse-3) - the inline color styling feature
+- [Part 4](https://8byte.vercel.app/blog/safehouse-4) - accommodating using the same loop in multiple place (useful for tabs)
+- [Part 5](https://8byte.vercel.app/blog/safehouse-5) - massive overhaul involving supporting nested loops
