@@ -22,3 +22,4 @@ You can also read about my development process in the following blog posts on my
 - [Part 3](https://8byte.vercel.app/blog/safehouse-3) - the inline color styling feature
 - [Part 4](https://8byte.vercel.app/blog/safehouse-4) - accommodating using the same loop in multiple place (useful for tabs)
 - [Part 5](https://8byte.vercel.app/blog/safehouse-5) - massive overhaul involving supporting nested loops
+- [Part 6](https://8byte.vercel.app/blog/safehouse-6) - adding if-variables and a refractor of the constructor
