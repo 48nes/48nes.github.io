@@ -35,7 +35,7 @@
       {% set subsubsection = get_section(path=subsubsection_name) %}
       {% for page in subsubsection.pages %}
         {% if total < 4%}        
-        <div class="col-md-4 col-6 p-2"> 
+        <div class="col-md-4 p-2"> 
             <a href="{{ page.permalink }}" class="project-box">
               <img src="{{ page.extra.image }}" class="project-thumbnail">
               <span>{{ page.title }}</span>
