@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="icon" href="https://48n.es/%20favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://48n.es/minimalism-dark.css" id="dark">
+  <link rel="stylesheet alternate" href="https://48n.es/minimalism.css" id="light">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    var lightTheme = document.getElementById("light");
+    var darkTheme = document.getElementById("dark");
+
+    if (localStorage.getItem('theme') == "light") {
+      darkTheme.rel = "stylesheet alternate";
+      lightTheme.rel = "stylesheet";
+    }
+  </script>
+  <div id="theme-toggle">
+    <button onclick="toggleTheme()"><i class="fas fa-sun"></i></button>
+  </div>
+  <div id="topbar">
+    <div id="navigation">
+      <div id="nav-left">
+        <a href="/">
+          <span>48</span><span>nes</span>
+        </a>
+      </div>
+      <div id="nav-right">
+        <a href="/about">
+          <span>about</span><span>,</span>
+        </a>
+        <a href="/projects">
+          <span>projects</span><span>,</span>
+        </a>
+        <a href="/resume">
+          <span>resume</span><span>,</span>
+        </a>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="main">
+    <div id="content">
+      
+  <img src="https://github.com/48nes/48nes.github.io/blob/main/public/safehouse.png?raw=true" alt="homepage image" width="100%" style="box-shadow: 0px 0px 5px #000000; margin-bottom: 20px;"/>
+<p><a href="https://safehou-se.vercel.app">Safehou-se</a> is a simple web application I built in a two day sprint. The project involved creating Template objects from a user given code template input (after sanitizing the input, of course), which could then be filled in by the user through inputs rather than having to go through the entire code themselves.</p>
+<p>The project is an update on an old prototype created by <a href="https://github.com/darling">Carter</a>, known as <a href="https://bruhhouse.vercel.app">Bruhhouse</a>. </p>
+<p>On November 4, 2022, another feature was added to the site to add inline color styling to templates. This feature was built in a one day sprint. </p>
+<p>You can also read about my development process in the following blog posts on my web development blog! Parts 1-4 are a much shorter read, but I go much more in depth into my development process in Part 5, where I complete a major overhaul in redesigning my data structures to be recursive.</p>
+<ul>
+<li><a href="https://8byte.vercel.app/blog/safehouse-1">Part 1</a> - the very first beta version of the site with only global variables</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-2">Part 2</a> - adding input types and basic loop implementation</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-3">Part 3</a> - the inline color styling feature</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-4">Part 4</a> - accommodating using the same loop in multiple place (useful for tabs)</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-5">Part 5</a> - massive overhaul involving supporting nested loops</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-6">Part 6</a> - adding if-variables and a refractor of the constructor</li>
+</ul>
+
+
+    </div>
+  </div>
+  <div id="footer" class="text-center"t>
+    <span>made by <a href="https://8byte.vercel.app">agnes shan</a></span>
+    <span>—</span>
+    <span>powered by <a href="https://getzola.org">zola</a></span>
+    <span>—</span>
+    <span><a href="/credits">further credits</a></span>
+  </div>
+   
+  <script>
+    function toggleTheme() {
+      var lightTheme = document.getElementById("light");
+      var darkTheme = document.getElementById("dark");
+
+      if (localStorage.getItem('theme')) {
+        if (localStorage.getItem('theme') == "light") {
+          lightTheme.rel = "stylesheet alternate";
+          darkTheme.rel = "stylesheet";
+          localStorage.setItem("theme", "dark");
+        } else {
+          lightTheme.rel = "stylesheet";
+          darkTheme.rel = "stylesheet alternate";
+          localStorage.setItem("theme", "light");
+        }
+      } else {
+        lightTheme.rel = "stylesheet";
+        darkTheme.rel = "stylesheet alternate";
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="icon" href="https://48n.es/%20favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://48n.es/minimalism-dark.css" id="dark">
+  <link rel="stylesheet alternate" href="https://48n.es/minimalism.css" id="light">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    var lightTheme = document.getElementById("light");
+    var darkTheme = document.getElementById("dark");
+
+    if (localStorage.getItem('theme') == "light") {
+      darkTheme.rel = "stylesheet alternate";
+      lightTheme.rel = "stylesheet";
+    }
+  </script>
+  <div id="theme-toggle">
+    <button onclick="toggleTheme()"><i class="fas fa-sun"></i></button>
+  </div>
+  <div id="topbar">
+    <div id="navigation">
+      <div id="nav-left">
+        <a href="/">
+          <span>48</span><span>nes</span>
+        </a>
+      </div>
+      <div id="nav-right">
+        <a href="/about">
+          <span>about</span><span>,</span>
+        </a>
+        <a href="/projects">
+          <span>projects</span><span>,</span>
+        </a>
+        <a href="/resume">
+          <span>resume</span><span>,</span>
+        </a>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="main">
+    <div id="content">
+      
+  <p><img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/stor8%20light.jpeg?raw=true" style="width:33%;"/> <img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/stor8%20dark.jpeg?raw=true" style="width:33%;"/> <img src="https://github.com/48nes/48nes.github.io/blob/main/content/projects/eightbyte.PNG?raw=true" alt="drawing" style="width:33%;"/></p>
+<p>I created STOR8 as an alternative to Pastebin specific for storing HTML and CSS templates for <a href="https://48nes.github.io/projects/toyhouse/">toyhouse</a>. The site is written in Python using the Flask library. This project page details both the version of STOR8 released to the public and my personal modified version, <a href="https://eightbyte-codes.herokuapp.com">8byte Codes</a>.</p>
+<h3 id="features">Features</h3>
+<h4 id="stor8">STOR8</h4>
+<ol>
+<li>Up to 5 layers of folders (note: it is possible to have more layers of folders; the UI will simply not support any more than 5)</li>
+<li>Copy all button allows users to quickly copy/paste shared codes</li>
+<li>Password feature can be enabled/disabled on a code by code basis</li>
+<li>Base UI comes with light/dark mode toggles</li>
+<li>UI is farely barebones; it can be easily customized by users to suit their own needs</li>
+<li>Setup is easy and documented in the <a href="https://github.com/48nes/stor8">respository</a></li>
+</ol>
+<h4 id="premium-features">Premium Features</h4>
+<p>In addition to everything listed above, my own site has a few additional features.</p>
+<ol>
+<li>Username Verification</li>
+</ol>
+<p>Before being able to access my templates, a user must input their username to confirm they have read my Terms of Service. Their username is then checked against a list of users scraped from my forum post to ensure the user has read the rules. After verification, the data is saved in browser so users do not need to re-validate information each time.</p>
+<ol start="2">
+<li>File Bundles</li>
+</ol>
+<p>Certain files are bundled together. You can view examples of this <a href="https://eightbyte-codes.herokuapp.com/premium/reef">here</a> and <a href="https://eightbyte-codes.herokuapp.com/premium/roadtrip">here</a>. </p>
+<h4 id="live-demo">Live Demo</h4>
+<p>You can view the public version of STOR8 at <a href="https://stor8.herokuapp.com/">stor8.herokuapp.com</a> and a beta demo of all features at <a href="https://eightbyte-codes.herokuapp.com">eightbyte-codes.herokuapp.com</a>.</p>
+<p>STOR8's source code is available in <a href="https://github.com/48nes/stor8">this repository</a>.</p>
+
+
+    </div>
+  </div>
+  <div id="footer" class="text-center"t>
+    <span>made by <a href="https://8byte.vercel.app">agnes shan</a></span>
+    <span>—</span>
+    <span>powered by <a href="https://getzola.org">zola</a></span>
+    <span>—</span>
+    <span><a href="/credits">further credits</a></span>
+  </div>
+   
+  <script>
+    function toggleTheme() {
+      var lightTheme = document.getElementById("light");
+      var darkTheme = document.getElementById("dark");
+
+      if (localStorage.getItem('theme')) {
+        if (localStorage.getItem('theme') == "light") {
+          lightTheme.rel = "stylesheet alternate";
+          darkTheme.rel = "stylesheet";
+          localStorage.setItem("theme", "dark");
+        } else {
+          lightTheme.rel = "stylesheet";
+          darkTheme.rel = "stylesheet alternate";
+          localStorage.setItem("theme", "light");
+        }
+      } else {
+        lightTheme.rel = "stylesheet";
+        darkTheme.rel = "stylesheet alternate";
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

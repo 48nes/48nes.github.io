@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="icon" href="https://48n.es/%20favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://48n.es/minimalism-dark.css" id="dark">
+  <link rel="stylesheet alternate" href="https://48n.es/minimalism.css" id="light">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    var lightTheme = document.getElementById("light");
+    var darkTheme = document.getElementById("dark");
+
+    if (localStorage.getItem('theme') == "light") {
+      darkTheme.rel = "stylesheet alternate";
+      lightTheme.rel = "stylesheet";
+    }
+  </script>
+  <div id="theme-toggle">
+    <button onclick="toggleTheme()"><i class="fas fa-sun"></i></button>
+  </div>
+  <div id="topbar">
+    <div id="navigation">
+      <div id="nav-left">
+        <a href="/">
+          <span>48</span><span>nes</span>
+        </a>
+      </div>
+      <div id="nav-right">
+        <a href="/about">
+          <span>about</span><span>,</span>
+        </a>
+        <a href="/projects">
+          <span>projects</span><span>,</span>
+        </a>
+        <a href="/resume">
+          <span>resume</span><span>,</span>
+        </a>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="main">
+    <div id="content">
+      
+<div class="alert alert-info rounded-0 border-0">
+  I'm currently reworking my webpage. Please standby.
+</div>
+<div class="row no-gutters">
+  <div class="col-md-4"></div>
+  <div class="col-md-8">
+    <div class="card p-3">
+      <h1 class="ml-md-n5">about me</h1>
+      <p>I'm a software engineer currently pursuing a degree in computer science. </p>
+      <p>In my free time, I'm a <span class="text-muted">(self-taught)</span> freelance web developer. I started creating <a href="/projects/eightbyte">toyhouse themes</a> at the start of 2020 and since then I've built <a href="/projects">multiple web applications</a> improving accessibility on the site.</p>
+    </div>
+    <div class="d-flex justify-content-end mr-1 mt-n3" id="socials">
+      <h5>get in touch</h5>
+      <a href="mailto:agnesshan@live.com">
+        <i class="fas fa-envelope fa-fw"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/agnes-shan">
+        <i class="fab fa-linkedin fa-fw"></i>
+      </a>
+      <a href="https://github.com/48nes">
+        <i class="fab fa-github fa-fw"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<hr>
+<h1>featured projects</h1>
+<div class="row no-gutters">
+  <div class="col-md-6 d-flex align-items-center order-md-1 order-2">
+    <div class="card flex-fill project-card p-3">
+      <h5>
+        <a href="/projects/safehouse">safehou-se</a>
+      </h5>
+      <span class="project-tags">
+        <span>next.js</span>
+      </span>
+      <p>Safehou-se is a lightweight template engine to make code editing more accessible to beginners.</p>
+      <a href="/projects/safehouse" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="col-md-4 order-md-2 order-1">
+    <div class="project-img ml-md-n3" style="background-image: url('/safehouse.jpg');"></div>
+  </div>
+</div>
+<div class="p-4"></div>
+<div class="row no-gutters">
+  <div class="col-2"></div>
+  <div class="col-md-4">
+    <div class="project-img mr-md-n3" style="background-image: url('/eightbyte.jpg');"></div>
+  </div>
+  <div class="col-md-6 d-flex align-items-center">
+    <div class="card flex-fill project-card p-3">
+      <h5>
+        <a href="/projects/eightbyte">design portfolio</a>
+      </h5>
+      <span class="project-tags">
+        <span>html</span>
+        <span>css</span>
+      </span>
+      <p>I run my own freelance web development business, where I create custom sites for creatives.</p>
+      <a href="/projects/eightbyte" class="read-more">Read More</a>
+    </div>
+  </div>
+</div>
+<div class="p-3"></div>
+<h1 class="text-center mb-0">other notable work</h1>
+<a href="/projects" class="d-block text-center text-uppercase"><small>view all</small></a>
+<div class="row no-gutters mx-n2">
+  <div class="col-md-4 p-2">
+    <div class="card project-small-card p-3">
+      <a href="" class="d-flex justify-content-between align-items-center">
+        <span>project name</span>
+        <small><i class="fas fa-arrow-up-right-from-square"></i></small>
+      </a>
+      <p>description</p>
+      <span class="project-tags">
+        <span>tag</span>
+      </span>
+    </div>
+  </div>
+</div>
+<hr>
+<h1>recent blog posts</h1>
+<p>I occasionally do a little writing on <a href="https://8byte.vercel.app/blog">8byte logs</a> about my journey with web development.</p>
+
+    </div>
+  </div>
+  <div id="footer" class="text-center"t>
+    <span>made by <a href="https://8byte.vercel.app">agnes shan</a></span>
+    <span>—</span>
+    <span>powered by <a href="https://getzola.org">zola</a></span>
+    <span>—</span>
+    <span><a href="/credits">further credits</a></span>
+  </div>
+   
+  <script>
+    function toggleTheme() {
+      var lightTheme = document.getElementById("light");
+      var darkTheme = document.getElementById("dark");
+
+      if (localStorage.getItem('theme')) {
+        if (localStorage.getItem('theme') == "light") {
+          lightTheme.rel = "stylesheet alternate";
+          darkTheme.rel = "stylesheet";
+          localStorage.setItem("theme", "dark");
+        } else {
+          lightTheme.rel = "stylesheet";
+          darkTheme.rel = "stylesheet alternate";
+          localStorage.setItem("theme", "light");
+        }
+      } else {
+        lightTheme.rel = "stylesheet";
+        darkTheme.rel = "stylesheet alternate";
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
