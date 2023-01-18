@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agnes shan</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;48n.es&#x2F;style.css">
+  <script src="https://kit.fontawesome.com/df4414359e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    if (localStorage.getItem('theme')) {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    }
+  </script>
+  <div class="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 99999;">
+    <button onclick="changeTheme()" class="btn" data-target="#"><i class="fas fa-sun"></i></button>
+  </div>
+  <div class="mobile-header">
+    <button onclick="showSidebar()" class="btn" id="mobile-menu-toggle" data-toggle="off-canvas" data-target="#"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <ul class="sidebar nav d-flex flex-column" id="side-nav">
+        <li class="nav-item" id="nav-home"><a class="nav-link" href="/">home</a></li>
+        <li class="nav-item" id="nav-about"><a class="nav-link" href="/about">about me</a></li>
+        <li class="nav-item" id="nav-projects"><a class="nav-link" href="/projects">projects</a></li>
+        <li class="nav-item" id="nav-resume"><a class="nav-link" href="/resume">resume</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9" id="main">
+      <div id="content">
+        
+<div>
+  <h3 class="roboto-mono">Safehou-se</h3>
+  <h5 class="font-weight-normal mb-0">2022-08-28</h5>
+  <p class="text-primary mx-n1">
+    
+    <span class="m-1">#TypeScript</span>
+    
+    <span class="m-1">#SCSS</span>
+    
+  </p>
+  <img src="https://github.com/48nes/48nes.github.io/blob/main/public/safehouse.png?raw=true" alt="homepage image" width="100%" style="box-shadow: 0px 0px 5px #000000; margin-bottom: 20px;"/>
+<p><a href="https://safehou-se.vercel.app">Safehou-se</a> is a simple web application I built in a two day sprint. The project involved creating Template objects from a user given code template input (after sanitizing the input, of course), which could then be filled in by the user through inputs rather than having to go through the entire code themselves.</p>
+<p>The project is an update on an old prototype created by <a href="https://github.com/darling">Carter</a>, known as <a href="https://bruhhouse.vercel.app">Bruhhouse</a>. </p>
+<p>On November 4, 2022, another feature was added to the site to add inline color styling to templates. This feature was built in a one day sprint. </p>
+<p>You can also read about my development process in the following blog posts on my web development blog! Parts 1-4 are a much shorter read, but I go much more in depth into my development process in Part 5, where I complete a major overhaul in redesigning my data structures to be recursive.</p>
+<ul>
+<li><a href="https://8byte.vercel.app/blog/safehouse-1">Part 1</a> - the very first beta version of the site with only global variables</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-2">Part 2</a> - adding input types and basic loop implementation</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-3">Part 3</a> - the inline color styling feature</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-4">Part 4</a> - accommodating using the same loop in multiple place (useful for tabs)</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-5">Part 5</a> - massive overhaul involving supporting nested loops</li>
+<li><a href="https://8byte.vercel.app/blog/safehouse-6">Part 6</a> - adding if-variables and a refractor of the constructor</li>
+</ul>
+
+</div>
+
+      </div>
+      
+      <div class="footer">
+        <span> Site powered by <a href="https://www.getzola.org/">Zola</a> © 2021 Agnes Shan </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  var current = document.getElementById("nav-projects");
+  current.classList.add("active");
+</script>
+
+  <script>
+  function showSidebar() {
+    var sidebar = document.getElementById("side-nav");
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+    } else {
+      sidebar.classList.add("active");
+    }
+  }
+  </script>
+  <script>
+  function changeTheme() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme == "light") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+  </script>
+</body>
+</html>
