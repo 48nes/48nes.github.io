@@ -1,7 +1,132 @@
 {% extends "base.html" %}
 
+{% block script %}
+<script>
+  var current = document.getElementById("nav-about");
+  current.classList.add("active");
+</script>
+{% endblock script %}
+
 {% block content %}
-<div class="alert alert-info rounded-0 border-0">
-  Still working on this page...
+<div class="row no-gutters">
+    <div class="col-12" style="height: 100px;"></div>
+    <div class="col-lg-4 col-md-5 p-2">
+        <div class="container me-picture" style="background: url(https://github.com/48nes/48nes.github.io/blob/main/static/me%20lol.png?raw=true); background-size: cover; height: 420px;"></div>
+    </div>
+    <div class="col-lg-8 col-md-7 p-2 d-flex flex-column justify-content-center">
+        <h5 class="text-primary mb-0">a little more</h5>
+        <h1 class="typewriter mb-3">
+            about me
+        </h1>
+        <p>I'm Agnes Shan, an aspiring software engineer with an interest in financial tech. </p>
+        <p>In my free time, I taught myself HTML and CSS through <a href="https://8bytelogs.wordpress.com/">extensive trial and
+                error</a> and now I run my own <a href="https://toyhou.se/8byte">freelance frontend web development business</a>!
+            I work with a lot of artists and other creatives to build custom designed webpages for their various needs. 
+        </p>
+        <p>I'm not particularly active on social media, but feel free to follow me on   
+            <a href="https://github.com/48nes"><i class="fab fa-github mr-2"></i>Github</a>, <a href="https://www.linkedin.com/in/agnes-shan/"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>, 
+            or <a href="https://twitter.com/_48nes"><i class="fab fa-twitter mr-2"></i>Twitter</a>! I also occasionally write <a href="https://8bytelogs.wordpress.com/">blog posts</a> on my various web development projects.</p>
+        <p>Here are some of my quick (current) favorites:</p>
+        <ul class="list-unstyled" style="column-count: 2;">
+            <li><strong>Color:</strong> <span style="color: #beaee8;">#beaee8</span></li>
+            <li><strong>Number:</strong> 8</li>
+            <li><strong>Language:</strong> Python</li>
+            <li><strong>Font:</strong> <a href="https://fonts.google.com/specimen/Raleway">Raleway</a></li>
+        </ul>
+    </div>
+    <div class="col-12" style="height: 100px;"></div>
+
+    <div class="col-lg-5 col-md-6 p-2 d-flex flex-column justify-content-center align-items-center">
+        <h5 class="text-primary mb-0" id="music-title"></h5>
+        <h1 class="roboto-mono mb-3">listening to</h1>
+        <p>(come say hi on <a href="https://www.last.fm/user/friedeggnes">last.fm</a>!)</p>
+    </div>
+    <div class="col-lg-7 col-md-6 p-2">
+        <div class="row no-gutters mx-n2" id="music">
+            <!-- music -->
+        </div>
+    </div>
+
+    <div class="col-12" style="height: 100px;"></div>
 </div>
+<div class="row no-gutters">
+    <div class="col-lg-5 col-md-6 p-2 order-md-1 order-2">
+        <div class="d-flex flex-column align-items-center" style="height: 420px;" id="poetry">
+            <!-- poetry -->
+        </div>
+    </div>
+    <div class="col-lg-7 col-md-6 p-2 d-flex flex-column justify-content-center align-items-end order-md-2 order-1 text-right">
+        <h5 class="text-primary mb-0">
+            a look into my
+        </h5>
+        <h1 class="roboto-mono mb-3">media consumption</h1>
+        <p">some of what I've been reading lately, click the images for the source!</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://48nes.tumblr.com/api/read/json?num=4&type=photo"></script>
+
+<script type="text/javascript">
+    // The variable "tumblr_api_read" is now set.
+
+    var poetryDiv = document.getElementById('poetry');
+    for (let i = 0; i < 3; i++) {
+        var element = document.createElement('div');
+    element.innerHTML = tumblr_api_read['posts'][i]['regular-body'];
+    var firstImg = element.getElementsByTagName('img')[0];
+    var firstLink = element.getElementsByTagName('a')[0];
+        var linkToAdd = document.createElement("a");
+        var imgToAdd = document.createElement("img");
+        imgToAdd.src = firstImg.src;
+        linkToAdd.href = firstLink.href;
+        imgToAdd.classList.add("poetry-img")
+        var divToAdd = document.createElement("div");
+        divToAdd.classList.add("d-flex", "align-items-center", "my-2", "h-100");
+        divToAdd.appendChild(linkToAdd);
+        linkToAdd.appendChild(imgToAdd);
+        poetryDiv.appendChild(divToAdd);
+    }
+</script>
+
+<script type="text/javascript">
+    var url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=friedeggnes&api_key=957e9e63f0dc367a39bc10c89ccd4299&format=json";
+    fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var recentTracks = data['recenttracks']['track'];
+        var musicDiv = document.getElementById('music');
+        for (let i = 0; i < 9; i++) {
+            var musicContainer = document.createElement("div");
+            musicContainer.classList.add("col-md-4", "col-6", "p-2");
+            var musicLink = document.createElement("a");
+            if (i == 0) {
+                if (recentTracks[i]["@attr"]) {
+                    musicLink.classList.add("now-playing");
+                    var musicTitle = document.getElementById("music-title");
+                    musicTitle.innerText = "what I'm currently";
+                } else {
+                    var musicTitle = document.getElementById("music-title");
+                    musicTitle.innerText = "what I've been";
+                }
+            }
+
+	    if (i > 3) {
+	        musicContainer.classList.add("d-none", "d-md-block");
+	    }
+
+            musicLink.href = recentTracks[i]["url"];
+            var musicImg = document.createElement("img");
+            musicImg.classList.add("w-100", "music-img");
+            musicImg.src = recentTracks[i]["image"][3]["#text"];
+            musicLink.appendChild(musicImg);
+            musicContainer.appendChild(musicLink);
+            musicDiv.appendChild(musicContainer);
+        }
+    })
+    .catch(function (err) {
+        console.log("Something went wrong!", err);
+    });
+</script>
 {% endblock content %}

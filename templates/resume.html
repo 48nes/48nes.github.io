@@ -1,16 +1,129 @@
 {% extends "base.html" %}
 
+{% block script %}
+<script>
+  var current = document.getElementById("nav-resume");
+  current.classList.add("active");
+</script>
+{% endblock script %}
+
 {% block content %}
-<div class="alert alert-info rounded-0 border-0">
-  Still working on this page...
-</div>
-<div class="row no-gutters mt-5">
-  <div class="col-md-6 p-2">
-    <iframe src="/resume.pdf" class="w-100" style="height: 600px;"></iframe>
+<div>
+  <div class="row no-gutters mt-5">
+    <div class="col-lg-6 col-md-6 p-2">
+      <iframe src="/resume.pdf" class="w-100"></iframe>
+    </div>
+    <div class="col-lg-6 col-md-6 p-2 d-flex flex-column justify-content-center">
+      <h5 class="text-primary mb-0">here's my</h5>
+      <h1 class="typewriter mb-2">condensed resume</h1>
+      <p>(you can also download it <a href="/resume.pdf">here</a>!)</p>
+    </div>
+    <div class="col-12 p-2 my-4 text-center">
+      <h5 class="text-primary mb-0">... and here's some more information about</h5>
+      <h1 class="roboto-mono">my experiences</h1>
+    </div>
   </div>
-  <div class="col-md-6 p-2 d-flex flex-column justify-content-center">
-    <p>This is my condensed resume.</p>
-    <p>(you can also download it <a href="/resume.pdf">here</a>!)</p>
+  <div class="row no-gutters">
+    <div class="col-lg-4 col-md-5 p-2 d-flex align-items-center">
+      <h3 class="roboto-mono text-primary">education</h3>
+    </div>
+    <div class="col-lg-8 col-md-7 p-2">
+      <h5 class="d-flex justify-content-between">
+        <strong>Northeastern University</strong>
+        <span class="font-weight-normal text-primary">September 2020 - June 2024</span>
+      </h5>
+      <p class="font-italic">Khoury College of Computer Sciences</p>
+      <ul class="list-unstyled pl-3">
+        <li><strong>Honors:</strong> Honors College, Dean's List 2020-2022</li>
+        <li><strong>GPA:</strong> 3.76 / 4.00</li>
+        <li><strong>Relevant Coursework:</strong> Algorithms, Object-Oriented Design, Networks and
+          Distributed Systems, Computer Systems, Database Design, Investments,
+          Fintech and Financial Innovation, Financial Management
+        </li>
+      </ul>
+      <!-- high school -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Interlake High School</strong>
+        <span class="font-weight-normal text-primary">September 2016 - June 2020</span>
+      </h5>
+      <p class="font-italic">International Baccalaureate Diploma Recipient</p>
+      <ul class="list-unstyled pl-3">
+        <li><strong>Honors:</strong> International Baccalaureate Candidate, AP Scholar</li>
+        <li><strong>GPA:</strong> 4.00 / 4.00</li>
+        <li><strong>Relevant Coursework:</strong> IB Physics HL, IB History of the Americas HL, IB Literature HL, IB Business
+          Management HL, IB Mathematics SL, IB French SL
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- skills -->
+  <div class="row no-gutters my-5">
+    <div class="col-lg-4 col-md-5 p-2 order-md-2 order-1 d-flex align-items-center justify-content-end text-right">
+      <h3 class="roboto-mono text-primary">computer knowledge + skills</h3>
+    </div>
+    <div class="col-lg-8 col-md-7 p-2 order-md-1 order-2">
+      <ul class="list-unstyled">
+        <li class="my-1"><strong>Programming Languages:</strong> Python, Java, Go, C++, JavaScript</li>
+        <li class="my-1"><strong>Other Languages:</strong> PostgreSQL, MySQL, NoSQL, HTML, CSS, SCSS</li>
+        <li class="my-1"><strong>Systems:</strong> Windows, Linux</li>
+        <li class="my-1"><strong>Other Technologies:</strong> <a href="https://nextjs.org">Next.js</a>, <a
+            href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a>, <a href="https://www.djangoproject.com/">Django</a>,
+          <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://www.getzola.org/">Zola</a>, <a
+            href="https://github.com/">Git</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- next section -->
+  <div class="row no-gutters my-5">
+    <div class="col-lg-4 col-md-5 p-2 d-flex align-items-center">
+      <h3 class="roboto-mono text-primary">experience</h3>
+    </div>
+    <div class="col-lg-8 col-md-7 p-2">
+      <!-- fidelity -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Software Engineer @ <a href="https://www.fcatalyst.com/overview">FCAT</a></strong>
+        <span class="font-weight-normal text-primary">July 2022 - Present</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Currently employed</li>
+      </ul>
+      <!-- web dev -->
+      <h5 class="d-flex justify-content-between">
+        <strong><a href="https://toyhou.se/8byte">8byte</a> Web Design</strong>
+        <span class="font-weight-normal text-primary">February 2020 - Present</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Launched my own web design business and shop, serving over 200 customers within one
+          year of launch</li>
+        <li>Built web applications and static sites using Python, JavaScript, HTML, and CSS/SCSS</li>
+        <li>Expanded customer base by developing applications to boost engagement</li>
+        <li>Generated revenue through multiple channels of distribution</li>
+      </ul>
+      <!-- cobuy -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Intern at <a href="https://gocobuy.com">CoBuy</a></strong>
+        <span class="font-weight-normal text-primary">September 2019 - June 2020</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Conducted quality assurance testing for site functions</li>
+        <li>Audited partnership meetings and tracked potential networking opportunities</li>
+      </ul>
+      <!-- kumon -->
+      <h5 class="d-flex justify-content-between">
+        <strong>Teaching Assistant at Kumon</strong>
+        <span class="font-weight-normal text-primary">October 2016 - November 2018</span>
+      </h5>
+      <ul class="pl-3">
+        <li>Conducted quality assurance testing for site functions</li>
+        <li>Audited partnership meetings and tracked potential networking opportunities</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <h3 class="roboto-mono text-primary text-center">
+      projects
+    </h3>
+    <p class="text-center">You can check out all of my projects over on my <a href="/projects">projects page</a>!</p>
   </div>
 </div>
 {% endblock content %}
